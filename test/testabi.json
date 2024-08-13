@@ -1,0 +1,1022 @@
+[
+    {
+        "name": "ADDRESSES_PROVIDER",
+        "description": "Description for ADDRESSES_PROVIDER",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "BRIDGE_PROTOCOL_FEE",
+        "description": "Description for BRIDGE_PROTOCOL_FEE",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "FLASHLOAN_PREMIUM_TOTAL",
+        "description": "Description for FLASHLOAN_PREMIUM_TOTAL",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "FLASHLOAN_PREMIUM_TO_PROTOCOL",
+        "description": "Description for FLASHLOAN_PREMIUM_TO_PROTOCOL",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "MAX_NUMBER_RESERVES",
+        "description": "Description for MAX_NUMBER_RESERVES",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "MAX_STABLE_RATE_BORROW_SIZE_PERCENT",
+        "description": "Description for MAX_STABLE_RATE_BORROW_SIZE_PERCENT",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "POOL_REVISION",
+        "description": "Description for POOL_REVISION",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "backUnbacked",
+        "description": "Description for backUnbacked",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "fee": {
+                    "type": "string",
+                    "description": "Description for fee"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "fee"
+            ]
+        }
+    },
+    {
+        "name": "borrow",
+        "description": "Description for borrow",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "interestRateMode": {
+                    "type": "string",
+                    "description": "Description for interestRateMode"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Description for referralCode"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "Description for onBehalfOf"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "interestRateMode",
+                "referralCode",
+                "onBehalfOf"
+            ]
+        }
+    },
+    {
+        "name": "configureEModeCategory",
+        "description": "Description for configureEModeCategory",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Description for id"
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Description for category"
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ]
+        }
+    },
+    {
+        "name": "deposit",
+        "description": "Description for deposit",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "Description for onBehalfOf"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Description for referralCode"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "onBehalfOf",
+                "referralCode"
+            ]
+        }
+    },
+    {
+        "name": "dropReserve",
+        "description": "Description for dropReserve",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "finalizeTransfer",
+        "description": "Description for finalizeTransfer",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "from": {
+                    "type": "string",
+                    "description": "Description for from"
+                },
+                "to": {
+                    "type": "string",
+                    "description": "Description for to"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "balanceFromBefore": {
+                    "type": "string",
+                    "description": "Description for balanceFromBefore"
+                },
+                "balanceToBefore": {
+                    "type": "string",
+                    "description": "Description for balanceToBefore"
+                }
+            },
+            "required": [
+                "asset",
+                "from",
+                "to",
+                "amount",
+                "balanceFromBefore",
+                "balanceToBefore"
+            ]
+        }
+    },
+    {
+        "name": "flashLoan",
+        "description": "Description for flashLoan",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "receiverAddress": {
+                    "type": "string",
+                    "description": "Description for receiverAddress"
+                },
+                "assets": {
+                    "type": "string",
+                    "description": "Description for assets"
+                },
+                "amounts": {
+                    "type": "string",
+                    "description": "Description for amounts"
+                },
+                "interestRateModes": {
+                    "type": "string",
+                    "description": "Description for interestRateModes"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "Description for onBehalfOf"
+                },
+                "params": {
+                    "type": "string",
+                    "description": "Description for params"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Description for referralCode"
+                }
+            },
+            "required": [
+                "receiverAddress",
+                "assets",
+                "amounts",
+                "interestRateModes",
+                "onBehalfOf",
+                "params",
+                "referralCode"
+            ]
+        }
+    },
+    {
+        "name": "flashLoanSimple",
+        "description": "Description for flashLoanSimple",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "receiverAddress": {
+                    "type": "string",
+                    "description": "Description for receiverAddress"
+                },
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "params": {
+                    "type": "string",
+                    "description": "Description for params"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Description for referralCode"
+                }
+            },
+            "required": [
+                "receiverAddress",
+                "asset",
+                "amount",
+                "params",
+                "referralCode"
+            ]
+        }
+    },
+    {
+        "name": "getConfiguration",
+        "description": "Description for getConfiguration",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "getEModeCategoryData",
+        "description": "Description for getEModeCategoryData",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Description for id"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    {
+        "name": "getReserveAddressById",
+        "description": "Description for getReserveAddressById",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Description for id"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    {
+        "name": "getReserveData",
+        "description": "Description for getReserveData",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "getReserveNormalizedIncome",
+        "description": "Description for getReserveNormalizedIncome",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "getReserveNormalizedVariableDebt",
+        "description": "Description for getReserveNormalizedVariableDebt",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "getReservesList",
+        "description": "Description for getReservesList",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "getUserAccountData",
+        "description": "Description for getUserAccountData",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "user": {
+                    "type": "string",
+                    "description": "Description for user"
+                }
+            },
+            "required": [
+                "user"
+            ]
+        }
+    },
+    {
+        "name": "getUserConfiguration",
+        "description": "Description for getUserConfiguration",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "user": {
+                    "type": "string",
+                    "description": "Description for user"
+                }
+            },
+            "required": [
+                "user"
+            ]
+        }
+    },
+    {
+        "name": "getUserEMode",
+        "description": "Description for getUserEMode",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "user": {
+                    "type": "string",
+                    "description": "Description for user"
+                }
+            },
+            "required": [
+                "user"
+            ]
+        }
+    },
+    {
+        "name": "initReserve",
+        "description": "Description for initReserve",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "aTokenAddress": {
+                    "type": "string",
+                    "description": "Description for aTokenAddress"
+                },
+                "stableDebtAddress": {
+                    "type": "string",
+                    "description": "Description for stableDebtAddress"
+                },
+                "variableDebtAddress": {
+                    "type": "string",
+                    "description": "Description for variableDebtAddress"
+                },
+                "interestRateStrategyAddress": {
+                    "type": "string",
+                    "description": "Description for interestRateStrategyAddress"
+                }
+            },
+            "required": [
+                "asset",
+                "aTokenAddress",
+                "stableDebtAddress",
+                "variableDebtAddress",
+                "interestRateStrategyAddress"
+            ]
+        }
+    },
+    {
+        "name": "initialize",
+        "description": "Description for initialize",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "provider": {
+                    "type": "string",
+                    "description": "Description for provider"
+                }
+            },
+            "required": [
+                "provider"
+            ]
+        }
+    },
+    {
+        "name": "liquidationCall",
+        "description": "Description for liquidationCall",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "collateralAsset": {
+                    "type": "string",
+                    "description": "Description for collateralAsset"
+                },
+                "debtAsset": {
+                    "type": "string",
+                    "description": "Description for debtAsset"
+                },
+                "user": {
+                    "type": "string",
+                    "description": "Description for user"
+                },
+                "debtToCover": {
+                    "type": "string",
+                    "description": "Description for debtToCover"
+                },
+                "receiveAToken": {
+                    "type": "string",
+                    "description": "Description for receiveAToken"
+                }
+            },
+            "required": [
+                "collateralAsset",
+                "debtAsset",
+                "user",
+                "debtToCover",
+                "receiveAToken"
+            ]
+        }
+    },
+    {
+        "name": "mintToTreasury",
+        "description": "Description for mintToTreasury",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "assets": {
+                    "type": "string",
+                    "description": "Description for assets"
+                }
+            },
+            "required": [
+                "assets"
+            ]
+        }
+    },
+    {
+        "name": "mintUnbacked",
+        "description": "Description for mintUnbacked",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "Description for onBehalfOf"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Description for referralCode"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "onBehalfOf",
+                "referralCode"
+            ]
+        }
+    },
+    {
+        "name": "rebalanceStableBorrowRate",
+        "description": "Description for rebalanceStableBorrowRate",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "user": {
+                    "type": "string",
+                    "description": "Description for user"
+                }
+            },
+            "required": [
+                "asset",
+                "user"
+            ]
+        }
+    },
+    {
+        "name": "repay",
+        "description": "Description for repay",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "interestRateMode": {
+                    "type": "string",
+                    "description": "Description for interestRateMode"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "Description for onBehalfOf"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "interestRateMode",
+                "onBehalfOf"
+            ]
+        }
+    },
+    {
+        "name": "repayWithATokens",
+        "description": "Description for repayWithATokens",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "interestRateMode": {
+                    "type": "string",
+                    "description": "Description for interestRateMode"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "interestRateMode"
+            ]
+        }
+    },
+    {
+        "name": "repayWithPermit",
+        "description": "Description for repayWithPermit",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "interestRateMode": {
+                    "type": "string",
+                    "description": "Description for interestRateMode"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "Description for onBehalfOf"
+                },
+                "deadline": {
+                    "type": "string",
+                    "description": "Description for deadline"
+                },
+                "permitV": {
+                    "type": "string",
+                    "description": "Description for permitV"
+                },
+                "permitR": {
+                    "type": "string",
+                    "description": "Description for permitR"
+                },
+                "permitS": {
+                    "type": "string",
+                    "description": "Description for permitS"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "interestRateMode",
+                "onBehalfOf",
+                "deadline",
+                "permitV",
+                "permitR",
+                "permitS"
+            ]
+        }
+    },
+    {
+        "name": "rescueTokens",
+        "description": "Description for rescueTokens",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "description": "Description for token"
+                },
+                "to": {
+                    "type": "string",
+                    "description": "Description for to"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                }
+            },
+            "required": [
+                "token",
+                "to",
+                "amount"
+            ]
+        }
+    },
+    {
+        "name": "resetIsolationModeTotalDebt",
+        "description": "Description for resetIsolationModeTotalDebt",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "setConfiguration",
+        "description": "Description for setConfiguration",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "configuration": {
+                    "type": "string",
+                    "description": "Description for configuration"
+                }
+            },
+            "required": [
+                "asset",
+                "configuration"
+            ]
+        }
+    },
+    {
+        "name": "setReserveInterestRateStrategyAddress",
+        "description": "Description for setReserveInterestRateStrategyAddress",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "rateStrategyAddress": {
+                    "type": "string",
+                    "description": "Description for rateStrategyAddress"
+                }
+            },
+            "required": [
+                "asset",
+                "rateStrategyAddress"
+            ]
+        }
+    },
+    {
+        "name": "setUserEMode",
+        "description": "Description for setUserEMode",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "categoryId": {
+                    "type": "string",
+                    "description": "Description for categoryId"
+                }
+            },
+            "required": [
+                "categoryId"
+            ]
+        }
+    },
+    {
+        "name": "setUserUseReserveAsCollateral",
+        "description": "Description for setUserUseReserveAsCollateral",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "useAsCollateral": {
+                    "type": "string",
+                    "description": "Description for useAsCollateral"
+                }
+            },
+            "required": [
+                "asset",
+                "useAsCollateral"
+            ]
+        }
+    },
+    {
+        "name": "supply",
+        "description": "Description for supply",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "Description for onBehalfOf"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Description for referralCode"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "onBehalfOf",
+                "referralCode"
+            ]
+        }
+    },
+    {
+        "name": "supplyWithPermit",
+        "description": "Description for supplyWithPermit",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "Description for onBehalfOf"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Description for referralCode"
+                },
+                "deadline": {
+                    "type": "string",
+                    "description": "Description for deadline"
+                },
+                "permitV": {
+                    "type": "string",
+                    "description": "Description for permitV"
+                },
+                "permitR": {
+                    "type": "string",
+                    "description": "Description for permitR"
+                },
+                "permitS": {
+                    "type": "string",
+                    "description": "Description for permitS"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "onBehalfOf",
+                "referralCode",
+                "deadline",
+                "permitV",
+                "permitR",
+                "permitS"
+            ]
+        }
+    },
+    {
+        "name": "swapBorrowRateMode",
+        "description": "Description for swapBorrowRateMode",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "interestRateMode": {
+                    "type": "string",
+                    "description": "Description for interestRateMode"
+                }
+            },
+            "required": [
+                "asset",
+                "interestRateMode"
+            ]
+        }
+    },
+    {
+        "name": "updateBridgeProtocolFee",
+        "description": "Description for updateBridgeProtocolFee",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolFee": {
+                    "type": "string",
+                    "description": "Description for protocolFee"
+                }
+            },
+            "required": [
+                "protocolFee"
+            ]
+        }
+    },
+    {
+        "name": "updateFlashloanPremiums",
+        "description": "Description for updateFlashloanPremiums",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "flashLoanPremiumTotal": {
+                    "type": "string",
+                    "description": "Description for flashLoanPremiumTotal"
+                },
+                "flashLoanPremiumToProtocol": {
+                    "type": "string",
+                    "description": "Description for flashLoanPremiumToProtocol"
+                }
+            },
+            "required": [
+                "flashLoanPremiumTotal",
+                "flashLoanPremiumToProtocol"
+            ]
+        }
+    },
+    {
+        "name": "withdraw",
+        "description": "Description for withdraw",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "Description for asset"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                },
+                "to": {
+                    "type": "string",
+                    "description": "Description for to"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "to"
+            ]
+        }
+    }
+]

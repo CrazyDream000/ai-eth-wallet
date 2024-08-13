@@ -1,0 +1,2601 @@
+{
+    "swap my eth on arbtrim for 30 usdc and short sol with 15 with 2x on gmx": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "eth",
+                    "outputToken": "usdc",
+                    "outputAmount": "30",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "short",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputToken": "usdc",
+                    "inputAmount": "outputAmount",
+                    "outputToken": "sol",
+                    "leverageMultiplier": "2x",
+                    "chainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "swap 20$ of eth in usdc on jumper every tuesday for 2 weeks": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "protocolName": "jumper",
+                    "inputAmount": "20",
+                    "inputAmountUnits": "usd",
+                    "inputToken": "eth",
+                    "outputToken": "usdc"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "tuesday",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    },
+                    "end_time": "2 weeks"
+                }
+            }
+        ]
+    ],
+    "swap 1 eth to usdc when gas is below 10 until tomorrow": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "1",
+                    "inputToken": "eth",
+                    "outputToken": "usdc"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "gas",
+                    "comparator": "<=",
+                    "value": "10",
+                    "type": "gas"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "end_time": "tomorrow"
+                }
+            }
+        ]
+    ],
+    "swap all matic to usdc on polygon then bridge all usdc from polygon to base": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "matic",
+                    "outputToken": "usdc",
+                    "chainName": "polygon"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "usdc",
+                    "sourceChainName": "polygon",
+                    "destinationChainName": "base"
+                }
+            }
+        ]
+    ],
+    "swap blur on eth for pepe on blast": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "blur",
+                    "outputToken": "pepe",
+                    "chainName": "ethereum"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "pepe",
+                    "destinationChainName": "blast",
+                    "sourceChainName": "ethereum"
+                }
+            }
+        ]
+    ],
+    "swap all of my ondo on arb for wif on base": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "ondo",
+                    "outputToken": "wif",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "wif",
+                    "destinationChainName": "base",
+                    "sourceChainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "swap all of my weth on base for eth on arbitrum": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "weth",
+                    "outputToken": "eth",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "eth",
+                    "destinationChainName": "arbitrum",
+                    "sourceChainName": "base"
+                }
+            }
+        ]
+    ],
+    "swap 100 akt on optimism for stx on bsc": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "100",
+                    "inputToken": "akt",
+                    "outputToken": "stx",
+                    "chainName": "optimism"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "stx",
+                    "destinationChainName": "bsc",
+                    "sourceChainName": "optimism"
+                }
+            }
+        ]
+    ],
+    "swap ltc on polygon for 13 shib on optimism": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "ltc",
+                    "outputToken": "shib",
+                    "outputAmount": "13",
+                    "chainName": "polygon"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "shib",
+                    "sourceChainName": "polygon",
+                    "destinationChainName": "optimism"
+                }
+            }
+        ]
+    ],
+    "swap jasmy on base for 100 gala on arbitrum": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "jasmy",
+                    "outputToken": "gala",
+                    "outputAmount": "100",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "gala",
+                    "sourceChainName": "base",
+                    "destinationChainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "swap bonk on op for floki": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "bonk",
+                    "outputToken": "floki",
+                    "chainName": "optimism"
+                }
+            }
+        ]
+    ],
+    "swap eth for link on arb": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "eth",
+                    "outputToken": "link",
+                    "chainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "swap $100 of eth on arbitrum for $brett on base": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmountUnits": "usd",
+                    "inputAmount": "100",
+                    "inputToken": "eth",
+                    "outputToken": "brett",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "brett",
+                    "destinationChainName": "base",
+                    "sourceChainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "swap $100 worth of eth on avalanche for $brett on mainnet": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "100",
+                    "inputAmountUnits": "usd",
+                    "inputToken": "eth",
+                    "outputToken": "brett",
+                    "chainName": "avalanche"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "brett",
+                    "sourceChainName": "avalanche",
+                    "destinationChainName": "ethereum"
+                }
+            }
+        ]
+    ],
+    "withdraw all my eth from lodestar. then long doge with 2x leverage": [
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "lodestar",
+                    "amount": "all",
+                    "token": "eth"
+                }
+            },
+            {
+                "name": "long",
+                "args": {
+                    "protocolName": "lodestar",
+                    "inputAmount": "outputAmount",
+                    "inputToken": "eth",
+                    "outputToken": "doge",
+                    "leverageMultiplier": "2x"
+                }
+            }
+        ],
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "lodestar",
+                    "amount": "all",
+                    "token": "eth"
+                }
+            },
+            {
+                "name": "long",
+                "args": {
+                    "protocolName": "lodestar",
+                    "inputToken": "eth",
+                    "outputToken": "doge",
+                    "leverageMultiplier": "2x"
+                }
+            }
+        ]
+    ],
+    "swap all of usdc.e on polygon to matic via ambient": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "usdc.e",
+                    "outputToken": "matic",
+                    "chainName": "polygon",
+                    "protocolName": "ambient"
+                }
+            }
+        ]
+    ],
+    "lend all of my usdc on arbitrum on lodestar. swap all of my DEGEN for ETH on base and bridge it to arbitrum. swap all of my WETH on base to eth.": [
+        [
+            {
+                "name": "lend",
+                "args": {
+                    "amount": "all",
+                    "token": "usdc",
+                    "chainName": "arbitrum",
+                    "protocolName": "lodestar"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "degen",
+                    "outputToken": "eth",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "eth",
+                    "sourceChainName": "base",
+                    "destinationChainName": "arbitrum"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "weth",
+                    "outputToken": "eth",
+                    "chainName": "base"
+                }
+            }
+        ]
+    ],
+    "bridge 0.01 eth from arbitrum to optimisim, blast, and zksych": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.01",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "optimism"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.01",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "blast"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.01",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "zksync"
+                }
+            }
+        ]
+    ],
+    "bridge 0.01 eth from arbitrum to optimisim and to blast": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.01",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "optimism"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.01",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "blast"
+                }
+            }
+        ]
+    ],
+    "bridge 0.01 eth to optimism, blast and base": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.01",
+                    "token": "eth",
+                    "destinationChainName": "optimism"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.01",
+                    "token": "eth",
+                    "destinationChainName": "blast"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.01",
+                    "token": "eth",
+                    "destinationChainName": "base"
+                }
+            }
+        ]
+    ],
+    "close my sol long on gmx": [
+        [
+            {
+                "name": "close",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputToken": "sol"
+                }
+            }
+        ]
+    ],
+    "close my sol position on gmx on arbitrum": [
+        [
+            {
+                "name": "close",
+                "args": {
+                    "protocolName": "gmx",
+                    "chainName": "arbitrum",
+                    "inputToken": "sol"
+                }
+            }
+        ]
+    ],
+    "swap $4.5k worth of wbtc for trump on ethereum": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "4500.0",
+                    "inputAmountUnits": "usd",
+                    "inputToken": "wbtc",
+                    "outputToken": "trump",
+                    "chainName": "ethereum"
+                }
+            }
+        ]
+    ],
+    "swap eth to 100 usdc on base every tuesday and thursday at 6pm cet": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "eth",
+                    "outputAmount": "100",
+                    "outputToken": "usdc",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "tuesday 6pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "thursday 6pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            }
+        ]
+    ],
+    "swap $670 of sol for wbtc for arbitrum": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "670",
+                    "inputAmountUnits": "usd",
+                    "inputToken": "sol",
+                    "outputToken": "wbtc",
+                    "chainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "buy 0.01 eth of maga": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "outputToken": "maga",
+                    "inputAmount": "0.01",
+                    "inputToken": "eth"
+                }
+            }
+        ]
+    ],
+    "buy 0.01 eth of pepe": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "outputToken": "pepe",
+                    "inputAmount": "0.01",
+                    "inputToken": "eth"
+                }
+            }
+        ]
+    ],
+    "buy 10 dollars worth of eth of 0x576e2bed8f7b46d34016198911cdf9886f78bea7": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "10",
+                    "inputAmountUnits": "usd",
+                    "inputToken": "eth",
+                    "outputToken": "0x576e2bed8f7b46d34016198911cdf9886f78bea7"
+                }
+            }
+        ]
+    ],
+    "bridge all of my usdc across all chains to arbitrum": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "all",
+                    "token": "usdc",
+                    "sourceChainName": "all",
+                    "destinationChainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "withdraw half my eth position from morpho when ltv goes below 40": [
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "amount": "half",
+                    "token": "eth",
+                    "protocolName": "morpho"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "ltv",
+                    "comparator": "<=",
+                    "value": "40%",
+                    "type": "ltv"
+                }
+            }
+        ]
+    ],
+    "when gas doubles, sell all my eth": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "eth"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "gas",
+                    "comparator": "==",
+                    "value": "2x",
+                    "type": "gas"
+                }
+            }
+        ],
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "eth"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "gas",
+                    "comparator": ">=",
+                    "value": "2x",
+                    "type": "gas"
+                }
+            }
+        ]
+    ],
+    "deposit into morpho and bridge all my usdc to base when gas goes down 50%": [
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "morpho"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "all",
+                    "token": "usdc",
+                    "destinationChainName": "base"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "gas",
+                    "comparator": "<=",
+                    "value": "50%",
+                    "type": "gas"
+                }
+            }
+        ]
+    ],
+    "if eth price goes up 20%, buy pepe with 30% of my usdc": [
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": ">=",
+                    "value": "20%",
+                    "type": "price"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "30%",
+                    "inputToken": "usdc",
+                    "outputToken": "pepe"
+                }
+            }
+        ]
+    ],
+    "sell my doge when price 3x": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "doge"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "doge",
+                    "comparator": "==",
+                    "value": "3x",
+                    "type": "price"
+                }
+            }
+        ],
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "doge"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "doge",
+                    "comparator": ">=",
+                    "value": "3x",
+                    "type": "price"
+                }
+            }
+        ]
+    ],
+    "bridge to arbitrum and swap to gmx when gmx market cap dips 10%": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "destinationChainName": "arbitrum"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "outputToken": "gmx",
+                    "chainName": "arbitrum",
+                    "inputAmount": "outputAmount",
+                    "inputToken": "outputToken"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "gmx",
+                    "comparator": "<=",
+                    "value": "10%",
+                    "type": "market cap"
+                }
+            }
+        ]
+    ],
+    "if market cap of $wif 3x, sell 10% of my wif": [
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "wif",
+                    "comparator": "==",
+                    "value": "3x",
+                    "type": "market cap"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "10%",
+                    "inputToken": "wif"
+                }
+            }
+        ],
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "wif",
+                    "comparator": ">=",
+                    "value": "3x",
+                    "type": "market cap"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "10%",
+                    "inputToken": "wif"
+                }
+            }
+        ]
+    ],
+    "when my dog balance 5x, sell it all for eth": [
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "dog",
+                    "comparator": "==",
+                    "value": "5x",
+                    "type": "balance"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "dog",
+                    "outputToken": "eth"
+                }
+            }
+        ]
+    ],
+    "buy wbtc with eth when my usdc balance decreases 50%": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "eth",
+                    "outputToken": "wbtc"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "usdc",
+                    "comparator": "<=",
+                    "value": "50%",
+                    "type": "balance"
+                }
+            }
+        ]
+    ],
+    "deposit my eth and usdc into the uniswap pool with 3% range": [
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "uniswap",
+                    "token": "eth",
+                    "range": "3%"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "uniswap",
+                    "amount": "outputAmount",
+                    "token": "usdc",
+                    "range": "3%"
+                }
+            }
+        ],
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "uniswap",
+                    "amount": "all",
+                    "token": "eth",
+                    "range": "3%"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "uniswap",
+                    "amount": "outputAmount",
+                    "token": "usdc",
+                    "range": "3%"
+                }
+            }
+        ]
+    ],
+    "deposit my degen into the degen-eth pool on aerodrome with 5% range": [
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "aerodrome",
+                    "poolName": "degen-eth",
+                    "token": "degen",
+                    "range": "5%"
+                }
+            }
+        ]
+    ],
+    "deposit 20 dai and 20 usdt into the curve 3pool": [
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "curve",
+                    "poolName": "3pool",
+                    "amount": "20",
+                    "token": "dai"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "curve",
+                    "poolName": "3pool",
+                    "amount": "20",
+                    "token": "usdt"
+                }
+            }
+        ]
+    ],
+    "withdraw from my camelot position, redeposit with 20% range": [
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "camelot"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "camelot",
+                    "amount": "outputAmount",
+                    "token": "outputToken",
+                    "range": "20%"
+                }
+            }
+        ]
+    ],
+    "deposit all my wbtc into the velodrome wbtc-eth pool with 10% range, then stake lp": [
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "velodrome",
+                    "poolName": "wbtc-eth",
+                    "amount": "all",
+                    "token": "wbtc",
+                    "range": "10%"
+                }
+            },
+            {
+                "name": "stake",
+                "args": {
+                    "protocolName": "velodrome",
+                    "amount": "outputAmount",
+                    "token": "lp"
+                }
+            }
+        ],
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "velodrome",
+                    "poolName": "wbtc-eth",
+                    "amount": "all",
+                    "token": "wbtc",
+                    "range": "10%"
+                }
+            },
+            {
+                "name": "stake",
+                "args": {
+                    "protocolName": "velodrome",
+                    "amount": "outputAmount",
+                    "token": "outputToken"
+                }
+            }
+        ]
+    ],
+    "deposit 50 usdc and equivalent wbtc into 0xdef1c0ded9bec7f1a1670819833240f027b25eff": [
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "amount": "50",
+                    "token": "usdc",
+                    "poolName": "0xdef1c0ded9bec7f1a1670819833240f027b25eff"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "wbtc",
+                    "poolName": "0xdef1c0ded9bec7f1a1670819833240f027b25eff"
+                }
+            }
+        ]
+    ],
+    "withdraw everything from 0x0fe7737956d706bc420f87b69aa4773cfc3b1a44": [
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "amount": "all",
+                    "poolName": "0x0fe7737956d706bc420f87b69aa4773cfc3b1a44"
+                }
+            }
+        ],
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "amount": "all",
+                    "protocolName": "all"
+                }
+            }
+        ]
+    ],
+    "withdraw my weth from 0x3cd751e6b0078be393132286c442345e5dc49699 and deposit it into 0xf577628a1b2338f27e9331ea945c3b83f8dfd439": [
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "token": "weth",
+                    "poolName": "0x3cd751e6b0078be393132286c442345e5dc49699"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "weth",
+                    "poolName": "0xf577628a1b2338f27e9331ea945c3b83f8dfd439"
+                }
+            }
+        ],
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "all",
+                    "token": "weth"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "all",
+                    "amount": "outputAmount",
+                    "token": "weth"
+                }
+            }
+        ]
+    ],
+    "buy eth with 100 usdc whenever eth goes below $3100 and buy usdc with 0.03 eth whenever eth goes above $3300 indefinitely": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "100",
+                    "inputToken": "usdc",
+                    "outputToken": "eth"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": "<=",
+                    "value": "3100",
+                    "type": "price",
+                    "value_units": "usd",
+                    "period": "forever"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "0.03",
+                    "inputToken": "eth",
+                    "outputToken": "usdc"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": ">=",
+                    "value": "3300",
+                    "type": "price",
+                    "value_units": "usd",
+                    "period": "forever"
+                }
+            }
+        ]
+    ],
+    "whenever my balance for token x is greater than y (number) and the price of token x is greater than z (price), sell a (amount number) x (token name) for usdc": [
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "x",
+                    "comparator": ">=",
+                    "value": "y",
+                    "type": "balance",
+                    "period": "forever"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "operator": "and",
+                    "subject": "x",
+                    "comparator": ">=",
+                    "value": "z",
+                    "type": "price",
+                    "value_units": "usd",
+                    "period": "forever"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "x",
+                    "outputToken": "usdc"
+                }
+            }
+        ]
+    ],
+    "deposit all eth into camelot eth-usdc pool and stake the lp": [
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "camelot",
+                    "poolName": "eth-usdc",
+                    "amount": "all",
+                    "token": "eth"
+                }
+            },
+            {
+                "name": "stake",
+                "args": {
+                    "protocolName": "camelot",
+                    "amount": "outputAmount",
+                    "token": "outputToken"
+                }
+            }
+        ],
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "camelot",
+                    "poolName": "eth-usdc",
+                    "amount": "all",
+                    "token": "eth"
+                }
+            },
+            {
+                "name": "stake",
+                "args": {
+                    "protocolName": "camelot",
+                    "amount": "outputAmount",
+                    "token": "lp"
+                }
+            }
+        ]
+    ],
+    "buy eth with 100 usdc when eth is above 3000 or eth is below 1000": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "100",
+                    "inputToken": "usdc",
+                    "outputToken": "eth"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": ">=",
+                    "value": "3000",
+                    "type": "price"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "operator": "or",
+                    "subject": "eth",
+                    "comparator": "<=",
+                    "value": "1000",
+                    "type": "price"
+                }
+            }
+        ],
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "100",
+                    "inputToken": "usdc",
+                    "outputToken": "eth"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": ">=",
+                    "value": "3000",
+                    "type": "price",
+                    "value_units": "usd"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "operator": "or",
+                    "subject": "eth",
+                    "comparator": "<=",
+                    "value": "1000",
+                    "type": "price",
+                    "value_units": "usd"
+                }
+            }
+        ]
+    ],
+    "if gas goes below 10 or gas decreases 50%, bridge all my wbtc to base and deposit into aerodrome": [
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "gas",
+                    "comparator": "<=",
+                    "value": "10",
+                    "type": "gas"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "operator": "or",
+                    "subject": "gas",
+                    "comparator": "<=",
+                    "value": "50%",
+                    "type": "gas"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "all",
+                    "token": "wbtc",
+                    "destinationChainName": "base"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "aerodrome",
+                    "amount": "outputAmount",
+                    "token": "wbtc",
+                    "chainName": "base"
+                }
+            }
+        ],
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "operator": "or",
+                    "subject": "gas",
+                    "comparator": "<=",
+                    "value": "10",
+                    "type": "gas"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "operator": "or",
+                    "subject": "gas",
+                    "comparator": "<=",
+                    "value": "50%",
+                    "type": "gas"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "all",
+                    "token": "wbtc",
+                    "destinationChainName": "base"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "aerodrome",
+                    "amount": "outputAmount",
+                    "token": "wbtc",
+                    "chainName": "base"
+                }
+            }
+        ]
+    ],
+    "transfer 0.29 avax to 0x0e79459d098815bab924fb7a8a266448268b9650  on avalanche by 1:34pm utc": [
+        [
+            {
+                "name": "transfer",
+                "args": {
+                    "amount": "0.29",
+                    "token": "avax",
+                    "recipient": "0x0e79459d098815bab924fb7a8a266448268b9650",
+                    "chainName": "avalanche"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "1:34pm utc"
+                }
+            }
+        ]
+    ],
+    "swap .01 eth to usdc on arb": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": ".01",
+                    "inputToken": "eth",
+                    "outputToken": "usdc",
+                    "chainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "bridge 0.03 eth to blast and swap 0.02 eth to usdb on thruster": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.03",
+                    "token": "eth",
+                    "destinationChainName": "blast"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "protocolName": "thruster",
+                    "inputAmount": "0.02",
+                    "inputToken": "eth",
+                    "outputToken": "usdb",
+                    "chainName": "blast"
+                }
+            }
+        ]
+    ],
+    "bridge 0.001 eth from arbritrum to base and swap half of the eth to usdc and deposit the eth and usdc to aerodrome on base": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.001",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "half",
+                    "inputToken": "eth",
+                    "outputToken": "usdc",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "aerodrome",
+                    "amount": "outputAmount",
+                    "token": "eth",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "aerodrome",
+                    "amount": "outputAmount",
+                    "token": "usdc",
+                    "chainName": "base"
+                }
+            }
+        ]
+    ],
+    "lend .02 eth on dolomite on arbitrum, borrow 25 usdc from dolomite, and long eth with 2x leverage with the usdc on gmx": [
+        [
+            {
+                "name": "lend",
+                "args": {
+                    "protocolName": "dolomite",
+                    "amount": ".02",
+                    "token": "eth",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "borrow",
+                "args": {
+                    "protocolName": "dolomite",
+                    "amount": "25",
+                    "token": "usdc",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "long",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputAmount": "outputAmount",
+                    "inputToken": "usdc",
+                    "outputToken": "eth",
+                    "chainName": "arbitrum",
+                    "leverageMultiplier": "2x"
+                }
+            }
+        ],
+        [
+            {
+                "name": "lend",
+                "args": {
+                    "protocolName": "dolomite",
+                    "amount": ".02",
+                    "token": "eth",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "borrow",
+                "args": {
+                    "protocolName": "dolomite",
+                    "amount": "25",
+                    "token": "usdc",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "long",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputToken": "usdc",
+                    "outputToken": "eth",
+                    "chainName": "arbitrum",
+                    "leverageMultiplier": "2x"
+                }
+            }
+        ]
+    ],
+    "buy boop with all of my usdc on arbitrum when boop market cap hits $17,800,000": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "usdc",
+                    "outputToken": "boop",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "boop",
+                    "comparator": "==",
+                    "value": "17800000",
+                    "type": "market cap",
+                    "value_units": "usd"
+                }
+            }
+        ]
+    ],
+    "swap .02 eth to usdc on ethereum when gas goes below 7 and eth price hits $3000": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": ".02",
+                    "inputToken": "eth",
+                    "outputToken": "usdc",
+                    "chainName": "ethereum"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "gas",
+                    "comparator": "<=",
+                    "value": "7",
+                    "type": "gas"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": "==",
+                    "value": "3000",
+                    "type": "price",
+                    "value_units": "usd"
+                }
+            }
+        ]
+    ],
+    "swap 84897.30038135161 of my token with contract 0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4 to eth on base": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "84897.30038135161",
+                    "inputToken": "0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4",
+                    "outputToken": "eth",
+                    "chainName": "base"
+                }
+            }
+        ]
+    ],
+    "swap 0.0002 eth to dia on base by 12am on uniswap": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "0.0002",
+                    "inputToken": "eth",
+                    "outputToken": "dia",
+                    "chainName": "base",
+                    "protocolName": "uniswap"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "12am"
+                }
+            }
+        ]
+    ],
+    "long eth with 3x leverage with 10 usdc on gmx if eth less than 3100 every 12 hours": [
+        [
+            {
+                "name": "long",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputAmount": "10",
+                    "inputToken": "usdc",
+                    "outputToken": "eth",
+                    "leverageMultiplier": "3x"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": "<=",
+                    "value": "3100",
+                    "type": "price"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "recurrence": {
+                        "type": "hours",
+                        "interval": 12
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "name": "long",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputAmount": "10",
+                    "inputToken": "usdc",
+                    "outputToken": "eth",
+                    "leverageMultiplier": "3"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": "<=",
+                    "value": "3100",
+                    "type": "price"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "recurrence": {
+                        "type": "hours",
+                        "interval": 12
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "name": "long",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputAmount": "10",
+                    "inputToken": "usdc",
+                    "outputToken": "eth",
+                    "leverageMultiplier": "3x"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": "<=",
+                    "value": "3100",
+                    "type": "price",
+                    "value_units": "usd"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "recurrence": {
+                        "type": "hours",
+                        "interval": 12
+                    }
+                }
+            }
+        ]
+    ],
+    "swap 0.01 eth to usdc on arbitrum one, try using 3% slippage and find me the best rate": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "0.01",
+                    "inputToken": "eth",
+                    "outputToken": "usdc",
+                    "chainName": "arbitrum",
+                    "slippage": "3%"
+                }
+            }
+        ]
+    ],
+    "add 10 usdc collateral to my btc position on gmx ": [
+        [
+            {
+                "name": "long",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputAmount": "10",
+                    "inputToken": "usdc",
+                    "outputToken": "btc"
+                }
+            }
+        ]
+    ],
+    "bridge $100 of eth from arbitrum to base on jumper every tuesday and thursday at 5 pm cet": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "100",
+                    "amount_units": "usd",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base",
+                    "protocolName": "jumper"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "tuesday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "thursday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            }
+        ]
+    ],
+    "bridge $100 of eth from arbitrum to base every tuesday and thursday at 5 pm cet": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "100",
+                    "amount_units": "usd",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "tuesday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "thursday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            }
+        ]
+    ],
+    "bridge $100 of eth from arbitrum to base on debridge every tuesday and thursday at 5 pm cet": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "100",
+                    "amount_units": "usd",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base",
+                    "protocolName": "debridge"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "tuesday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "thursday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            }
+        ]
+    ],
+    "bridge $0-$100 of eth from arbitrum to base on jumper or debridge every tuesday and thursday at 5 pm cet": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount_units": "usd",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base",
+                    "protocolName": "debridge"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "tuesday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "thursday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            }
+        ]
+    ],
+    "bridge 0.01-0.02 of eth from arbitrum to base on jumper or debridge every tuesday and thursday at 5 pm cet": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base",
+                    "protocolName": "debridge"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "tuesday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "thursday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            }
+        ]
+    ],
+    "on arbitrum, close arb position on gmx when arb is above $1.10": [
+        [
+            {
+                "name": "close",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputToken": "arb",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "arb",
+                    "comparator": ">=",
+                    "value": "1.10",
+                    "type": "price",
+                    "value_units": "usd"
+                }
+            }
+        ]
+    ],
+    "withdraw all eth supplied to lodestar": [
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "lodestar",
+                    "amount": "all",
+                    "token": "eth"
+                }
+            }
+        ]
+    ],
+    "buy eth on arbitrum with 1 usdc when price of eth drops 0.1%": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "1",
+                    "inputToken": "usdc",
+                    "outputToken": "eth",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": "<=",
+                    "value": "0.1%",
+                    "type": "price"
+                }
+            }
+        ]
+    ],
+    "buy degen on base with 0.000001 eth when market cap drops 0.1%": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "0.000001",
+                    "inputToken": "eth",
+                    "outputToken": "degen",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "degen",
+                    "comparator": "<=",
+                    "value": "0.1%",
+                    "type": "market cap"
+                }
+            }
+        ],
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "0.000001",
+                    "inputToken": "eth",
+                    "outputToken": "degen",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": "<=",
+                    "value": "0.1%",
+                    "type": "market cap"
+                }
+            }
+        ]
+    ],
+    "swap all usdc to eth on arbitrum when gas is low and eth price drops 0.1%": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "usdc",
+                    "outputToken": "eth",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "gas",
+                    "comparator": "<=",
+                    "value": "low",
+                    "type": "gas"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": "<=",
+                    "value": "0.1%",
+                    "type": "price"
+                }
+            }
+        ]
+    ],
+    "bridge 0.01 eth from arbitrum to base and buy toshi with it at 3am today": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.01",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "outputAmount",
+                    "inputToken": "eth",
+                    "outputToken": "toshi",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "3am today"
+                }
+            }
+        ]
+    ],
+    "on base sell my degen to eth when profit in eth terms is 50%": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "degen",
+                    "outputToken": "eth",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "degen",
+                    "comparator": ">=",
+                    "value": "50%",
+                    "type": "price",
+                    "value_token": "eth"
+                }
+            }
+        ]
+    ],
+    "on base sell my degen to eth when profit in eth terms is 100%": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "degen",
+                    "outputToken": "eth",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "degen",
+                    "comparator": ">=",
+                    "value": "100%",
+                    "type": "price",
+                    "value_token": "eth"
+                }
+            }
+        ]
+    ],
+    "bridge 0.01 eth from arbitrum to base and buy degen with it at 2:30 pm eastern today": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.01",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "outputAmount",
+                    "inputToken": "eth",
+                    "outputToken": "degen",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "2:30 pm eastern today"
+                }
+            }
+        ]
+    ],
+    "bridge .01 eth from arbitrum to base and transfer .019 eth to [0x66e751f8a564be5b796e0e6d5d68fc7fa2c89976]": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": ".01",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base"
+                }
+            },
+            {
+                "name": "transfer",
+                "args": {
+                    "amount": ".019",
+                    "token": "eth",
+                    "recipient": "0x66e751f8a564be5b796e0e6d5d68fc7fa2c89976",
+                    "chainName": "base"
+                }
+            }
+        ]
+    ],
+    "swap all 0xafb89a09d82fbde58f18ac6437b3fc81724e4df6 for degen on base": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "all",
+                    "inputToken": "0xafb89a09d82fbde58f18ac6437b3fc81724e4df6",
+                    "outputToken": "degen",
+                    "chainName": "base"
+                }
+            }
+        ]
+    ],
+    "unlock eth and usdc on lodestar": [
+        [
+            {
+                "name": "unlock",
+                "args": {
+                    "protocolName": "lodestar",
+                    "token": "eth"
+                }
+            },
+            {
+                "name": "unlock",
+                "args": {
+                    "protocolName": "lodestar",
+                    "token": "usdc",
+                    "amount": "outputAmount"
+                }
+            }
+        ]
+    ],
+    "bridge all of my usdc on arbitrum to base and swap it to friend": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "all",
+                    "token": "usdc",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base"
+                }
+            },
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "outputAmount",
+                    "inputToken": "usdc",
+                    "outputToken": "friend",
+                    "chainName": "base"
+                }
+            }
+        ]
+    ],
+    "swap 0.005eth to 0x576e2bed8f7b46d34016198911cdf9886f78bea7": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "0.005",
+                    "inputToken": "eth",
+                    "outputToken": "0x576e2bed8f7b46d34016198911cdf9886f78bea7"
+                }
+            }
+        ]
+    ],
+    "bridge 0.009eth from base to arbitrum": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "0.009",
+                    "token": "eth",
+                    "sourceChainName": "base",
+                    "destinationChainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "withdraw eth and usdc on lodestar": [
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "lodestar",
+                    "token": "eth"
+                }
+            },
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "lodestar",
+                    "token": "usdc",
+                    "amount": "outputAmount"
+                }
+            }
+        ],
+        [
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "lodestar",
+                    "token": "eth",
+                    "amount": "all"
+                }
+            },
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "lodestar",
+                    "token": "usdc",
+                    "amount": "outputAmount"
+                }
+            }
+        ]
+    ],
+    "claim all of my rewards across all chains from stargate and bridge then to arbitrum": [
+        [
+            {
+                "name": "claim",
+                "args": {
+                    "protocolName": "stargate",
+                    "token": "all",
+                    "chainName": "all"
+                }
+            },
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "outputAmount",
+                    "token": "outputToken",
+                    "sourceChainName": "all",
+                    "destinationChainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "when my aave ltv hits 80%, deposit 200 usdc": [
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "aave ltv",
+                    "comparator": "==",
+                    "value": "80%",
+                    "type": "ltv"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "aave",
+                    "amount": "200",
+                    "token": "usdc"
+                }
+            }
+        ]
+    ],
+    "buy maga when fdv < 50 billion": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "outputToken": "maga"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "maga",
+                    "comparator": "<=",
+                    "value": "50000000000.0",
+                    "type": "fdv"
+                }
+            }
+        ]
+    ],
+    "sell wld when fdv goes above 1,000,000,000,000": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputToken": "wld"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "wld",
+                    "comparator": ">=",
+                    "value": "1000000000000",
+                    "type": "fdv"
+                }
+            }
+        ]
+    ],
+    "when my lodestar health factor goes below 1.2, deposit all the usdt i have": [
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "lodestar",
+                    "comparator": "<=",
+                    "value": "1.2",
+                    "type": "health factor"
+                }
+            },
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "lodestar",
+                    "amount": "all",
+                    "token": "usdt"
+                }
+            }
+        ]
+    ],
+    "repay all my loans when morpho health factor goes below 1.1": [
+        [
+            {
+                "name": "repay",
+                "args": {
+                    "protocolName": "all"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "morpho",
+                    "comparator": "<=",
+                    "value": "1.1",
+                    "type": "health factor"
+                }
+            }
+        ],
+        [
+            {
+                "name": "repay",
+                "args": {
+                    "protocolName": "all",
+                    "amount": "all"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "morpho",
+                    "comparator": "<=",
+                    "value": "1.1",
+                    "type": "health factor"
+                }
+            }
+        ]
+    ],
+    "when compound health factor increases to 2, withdraw 1000 dai from it": [
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "compound",
+                    "comparator": ">=",
+                    "value": "2",
+                    "type": "health factor"
+                }
+            },
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "compound",
+                    "amount": "1000",
+                    "token": "dai"
+                }
+            }
+        ]
+    ],
+    "if fdv of stg is below 400 million, unstake my stg": [
+        [
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "stg",
+                    "comparator": "<=",
+                    "value": "400000000.0",
+                    "type": "fdv"
+                }
+            },
+            {
+                "name": "unstake",
+                "args": {
+                    "token": "stg",
+                    "protocolName": "all"
+                }
+            }
+        ]
+    ],
+    "bridge $0-$100 of eth from arbitrum to base every tuesday and thursday at 5 pm cet. randomly select debridge or jumper as bridge solution": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount_units": "usd",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base",
+                    "protocolName": "jumper"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "tuesday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "thursday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            }
+        ]
+    ],
+    "on arbitrum, close arb token short position on gmx, repay the usdc on lodestar and withdraw all lended eth on lodestar": [
+        [
+            {
+                "name": "close",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputToken": "arb",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "repay",
+                "args": {
+                    "protocolName": "lodestar",
+                    "token": "usdc",
+                    "chainName": "arbitrum",
+                    "amount": "outputAmount"
+                }
+            },
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "lodestar",
+                    "amount": "all",
+                    "token": "eth",
+                    "chainName": "arbitrum"
+                }
+            }
+        ],
+        [
+            {
+                "name": "close",
+                "args": {
+                    "protocolName": "gmx",
+                    "inputToken": "arb",
+                    "chainName": "arbitrum"
+                }
+            },
+            {
+                "name": "repay",
+                "args": {
+                    "protocolName": "lodestar",
+                    "token": "usdc",
+                    "chainName": "arbitrum",
+                    "amount": "all"
+                }
+            },
+            {
+                "name": "withdraw",
+                "args": {
+                    "protocolName": "lodestar",
+                    "amount": "all",
+                    "token": "eth",
+                    "chainName": "arbitrum"
+                }
+            }
+        ]
+    ],
+    "buy degen on base with 0.000001 eth when market cap moves up or down 0.1% from current price": [
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "0.000001",
+                    "inputToken": "eth",
+                    "outputToken": "degen",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": "<=",
+                    "value": "0.1%",
+                    "type": "price"
+                }
+            }
+        ],
+        [
+            {
+                "name": "swap",
+                "args": {
+                    "inputAmount": "0.000001",
+                    "inputToken": "eth",
+                    "outputToken": "degen",
+                    "chainName": "base"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "eth",
+                    "comparator": ">=",
+                    "value": "0.1%",
+                    "type": "price"
+                }
+            }
+        ]
+    ],
+    "bridge $100 of eth from arbitrum to base every tuesday and thursday at 5 pm cet. randomly select debridge or jumper as bridging solution": [
+        [
+            {
+                "name": "bridge",
+                "args": {
+                    "amount": "100",
+                    "amount_units": "usd",
+                    "token": "eth",
+                    "sourceChainName": "arbitrum",
+                    "destinationChainName": "base",
+                    "protocolName": "jumper"
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "tuesday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            },
+            {
+                "name": "time",
+                "args": {
+                    "start_time": "thursday 5 pm cet",
+                    "recurrence": {
+                        "type": "weeks",
+                        "interval": 1
+                    }
+                }
+            }
+        ]
+    ],
+    "deposit into the pendle yt-eth pool if pendle token fdv goes under 200000000": [
+        [
+            {
+                "name": "deposit",
+                "args": {
+                    "protocolName": "pendle",
+                    "poolName": "yt-eth"
+                }
+            },
+            {
+                "name": "condition",
+                "args": {
+                    "subject": "pendle",
+                    "comparator": "<=",
+                    "value": "200000000",
+                    "type": "fdv"
+                }
+            }
+        ]
+    ]
+}

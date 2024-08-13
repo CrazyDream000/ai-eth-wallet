@@ -1,0 +1,18 @@
+{
+    "language": "Solidity",
+    "sources": {
+      "aave/lib/aave-v3-core/contracts/protocol/pool/Pool.sol": {
+        "urls": ["aave/lib/aave-v3-core/contracts/protocol/pool/Pool.sol"]
+      },
+      "aave/lib/aave-v3-core/contracts/protocol/libraries/helpers/Errors.sol": {
+        "urls": ["aave/lib/aave-v3-core/contracts/protocol/libraries/helpers/Errors.sol"]
+      }
+    },
+    "settings": {
+      "outputSelection": {
+        "*": {
+          "Pool": [ "abi", "devdoc", "userdoc" ]
+        }
+      }
+    }
+  }

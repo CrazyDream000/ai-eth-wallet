@@ -1,0 +1,291 @@
+[
+    {
+        "name": "buyShares",
+        "description": "Description for buyShares",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "sharesSubject": {
+                    "type": "string",
+                    "description": "Description for sharesSubject"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                }
+            },
+            "required": [
+                "sharesSubject",
+                "amount"
+            ]
+        }
+    },
+    {
+        "name": "getBuyPrice",
+        "description": "Description for getBuyPrice",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "sharesSubject": {
+                    "type": "string",
+                    "description": "Description for sharesSubject"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                }
+            },
+            "required": [
+                "sharesSubject",
+                "amount"
+            ]
+        }
+    },
+    {
+        "name": "getBuyPriceAfterFee",
+        "description": "Description for getBuyPriceAfterFee",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "sharesSubject": {
+                    "type": "string",
+                    "description": "Description for sharesSubject"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                }
+            },
+            "required": [
+                "sharesSubject",
+                "amount"
+            ]
+        }
+    },
+    {
+        "name": "getPrice",
+        "description": "Description for getPrice",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "supply": {
+                    "type": "string",
+                    "description": "Description for supply"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                }
+            },
+            "required": [
+                "supply",
+                "amount"
+            ]
+        }
+    },
+    {
+        "name": "getSellPrice",
+        "description": "Description for getSellPrice",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "sharesSubject": {
+                    "type": "string",
+                    "description": "Description for sharesSubject"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                }
+            },
+            "required": [
+                "sharesSubject",
+                "amount"
+            ]
+        }
+    },
+    {
+        "name": "getSellPriceAfterFee",
+        "description": "Description for getSellPriceAfterFee",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "sharesSubject": {
+                    "type": "string",
+                    "description": "Description for sharesSubject"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                }
+            },
+            "required": [
+                "sharesSubject",
+                "amount"
+            ]
+        }
+    },
+    {
+        "name": "owner",
+        "description": "Description for owner",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "protocolFeeDestination",
+        "description": "Description for protocolFeeDestination",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "protocolFeePercent",
+        "description": "Description for protocolFeePercent",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "renounceOwnership",
+        "description": "Description for renounceOwnership",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "sellShares",
+        "description": "Description for sellShares",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "sharesSubject": {
+                    "type": "string",
+                    "description": "Description for sharesSubject"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "Description for amount"
+                }
+            },
+            "required": [
+                "sharesSubject",
+                "amount"
+            ]
+        }
+    },
+    {
+        "name": "setFeeDestination",
+        "description": "Description for setFeeDestination",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "_feeDestination": {
+                    "type": "string",
+                    "description": "Description for _feeDestination"
+                }
+            },
+            "required": [
+                "_feeDestination"
+            ]
+        }
+    },
+    {
+        "name": "setProtocolFeePercent",
+        "description": "Description for setProtocolFeePercent",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "_feePercent": {
+                    "type": "string",
+                    "description": "Description for _feePercent"
+                }
+            },
+            "required": [
+                "_feePercent"
+            ]
+        }
+    },
+    {
+        "name": "setSubjectFeePercent",
+        "description": "Description for setSubjectFeePercent",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "_feePercent": {
+                    "type": "string",
+                    "description": "Description for _feePercent"
+                }
+            },
+            "required": [
+                "_feePercent"
+            ]
+        }
+    },
+    {
+        "name": "sharesBalance",
+        "description": "Description for sharesBalance",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "type": "string",
+                    "description": "Description for "
+                }
+            },
+            "required": [
+                "",
+                ""
+            ]
+        }
+    },
+    {
+        "name": "sharesSupply",
+        "description": "Description for sharesSupply",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "type": "string",
+                    "description": "Description for "
+                }
+            },
+            "required": [
+                ""
+            ]
+        }
+    },
+    {
+        "name": "subjectFeePercent",
+        "description": "Description for subjectFeePercent",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "transferOwnership",
+        "description": "Description for transferOwnership",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "newOwner": {
+                    "type": "string",
+                    "description": "Description for newOwner"
+                }
+            },
+            "required": [
+                "newOwner"
+            ]
+        }
+    }
+]

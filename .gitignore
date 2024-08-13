@@ -1,0 +1,12 @@
+.env
+__pycache__/
+res*.json
+test/words
+test/coins.json
+traindata.json
+traindata.jsonl
+valdata.json
+valdata.jsonl
+testdata.json
+.DS_Store
+temp.txt

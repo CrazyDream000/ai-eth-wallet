@@ -1,0 +1,227 @@
+[
+    {
+        "name": "swap",
+        "description": "Swaps or converts (buys, sells) source amount of source token for destination token on the same chain.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "chainName": {
+                    "type": "string",
+                    "description": "The ID of the blockchain chain where the token swap will occur."
+                },
+                "sourceAmount": {
+                    "type": "string",
+                    "description": "The amount of tokens to be swapped from the sourceToken, or sold."
+                },
+                "sourceToken": {
+                    "type": "string",
+                    "description": "The token to be swapped from, or sold."
+                },
+                "destinationToken": {
+                    "type": "string",
+                    "description": "The token to be received in the swap, or bought."
+                }
+            },
+            "required": [
+                "chainName",
+                "sourceAmount",
+                "sourceToken",
+                "destinationToken"
+            ]
+        }
+    },
+    {
+        "name": "bridge",
+        "description": "Bridges tokens between different blockchain networks by transferring amount of token from source chain to destination chain.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "sourceChainName": {
+                    "type": "string",
+                    "description": "The ID of the source blockchain chain. Must be different from destination chain."
+                },
+                "destinationChainName": {
+                    "type": "string",
+                    "description": "The ID of the destination blockchain chain. Must be different from source chain."
+                },
+                "sourceToken": {
+                    "type": "string",
+                    "description": "The token to be transferred from the source chain to the destination chain."
+                },
+                "sourceAmount": {
+                    "type": "string",
+                    "description": "The amount of tokens to be transferred."
+                }
+            },
+            "required": [
+                "sourceChainName",
+                "destinationChainName",
+                "sourceToken",
+                "sourceAmount"
+            ]
+        }
+    },
+    {
+        "name": "transfer",
+        "description": "Transfers tokens to another address on the same chain.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "description": "The token to be transferred."
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to be transferred."
+                },
+                "recipient": {
+                    "type": "string",
+                    "description": "The recipient's address for the token transfer."
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The ID of the blockchain chain where the token transfer will occur."
+                }
+            },
+            "required": ["token", "amount", "recipient", "chainName"]
+        }
+    },
+    {
+        "name": "protocol",
+        "description": "Performs specific actions on specific apps, exchanges, or protocols with an amount of a token.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The name of the protocol.",
+                    "default": "",
+                    "enum": ["", "Compound", "Aave", "all", "Rodeo", "JonesDAO", "Kwenta", "Radiant", "Morpho", "KyberSwap", "MMF", "Solidly", "Stargate", "Chronos", "Thena", "Redacted Cartel"]
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool on the protocol."
+                },
+                "action": {
+                    "type": "string",
+                    "description": "The action to be performed within the protocol.",
+                    "enum": ["deposit", "withdraw", "claim", "borrow", "lend", "stake", "unstake", "restake", "harvest", "long", "short", "close", "lock", "unlock", "loop", "unloop", "vote"]
+                },
+                "inputAmount": {
+                    "type": "string",
+                    "description": "The amount of tokens for the protocol interaction."
+                },
+                "inputToken": {
+                    "type": "string",
+                    "description": "The input token for the protocol interaction."
+                },
+                "outputToken": {
+                    "type": "string",
+                    "description": "The output token for the protocol interaction."
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The ID of the blockchain chain for the protocol interaction."
+                },
+                "leverageMultiplier": {
+                    "type": "string",
+                    "description": "The multiplier to apply to the input token to long or short with leverage."
+                },
+                "numberLoops": {
+                    "type": "string",
+                    "description": "The number of times to loop when looping or unloop when unlooping."
+                }
+            },
+            "required": [
+                "action"
+            ]
+        }
+    },
+    {
+        "name": "yield",
+        "description": "Finds best yield for user and deposits amount of specified token.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "chainName": {
+                    "type": "string",
+                    "description": "The ID of the blockchain."
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to be staked."
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of token to be staked."
+                }
+            },
+            "required": [
+                "chainName",
+                "token",
+                "amount"
+            ]
+        }
+    },
+    {
+        "name": "condition",
+        "description": "Returns when to perform a user's specific action by comparing subject to value.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "The type of data that initiates the user's query.",
+                    "enum": ["gas", "price"]
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The data that initiates the user's query."
+                },
+                "comparator": {
+                    "type": "string",
+                    "description": "A comparison operator to compare subject to value (greater than, less than, etc).",
+                    "enum": ["greater than", "less than", "greater than or equal to", "less than or equal to", "equals"]
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The value at which if the subject compares to True, the query runs."
+                },
+                "numActions": {
+                    "type": "integer",
+                    "description": "The number of user actions that this condition applies to."
+                }
+            },
+            "required": [
+                "type",
+                "subject",
+                "comparator",
+                "value",
+                "numActions"
+            ]
+        }
+    },
+    {
+        "name": "time",
+        "description": "Returns when to perform a user's specific action or actions by scheduling based on user requested time.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "description": "The time at which the user's specific action or actions should run."
+                },
+                "repeat_value": {
+                    "type": "string",
+                    "description": "The length of time between repeats of the user's specific action or actions."
+                },
+                "numActions": {
+                    "type": "integer",
+                    "description": "The number of user actions that this time scheduling applies to."
+                }
+            },
+            "required": []
+        }
+    }
+]

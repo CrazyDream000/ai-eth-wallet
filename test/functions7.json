@@ -1,0 +1,792 @@
+[
+    {
+        "name": "transfer",
+        "description": "Transfers amount of tokens to a recipient",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "recipient": {
+                    "type": "string",
+                    "description": "The recipient's address for the token transfer."
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "amount",
+                "token",
+                "recipient"
+            ]
+        }
+    },
+    {
+        "name": "swap",
+        "description": "Swaps (buys, sells) input amount of a token for another token",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "inputAmount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "inputToken": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "outputToken": {
+                    "type": "string",
+                    "description": "The token to receive"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "inputAmount",
+                "inputToken",
+                "outputToken"
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    {
+        "name": "bridge",
+        "description": "Bridges an amount of a token from one chain to another chain",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "sourceChainName": {
+                    "type": "string",
+                    "description": "The name of the source blockchain when bridging"
+                },
+                "destinationChainName": {
+                    "type": "string",
+                    "description": "The name of the destination blockchain when bridging"
+                }
+            },
+            "required": [
+                "amount",
+                "token",
+                "sourceChainName",
+                "destinationChainName"
+            ]
+        }
+    },
+    {
+        "name": "deposit",
+        "description": "Deposits amount of a token into a pool on a protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use",
+                    "default": ""
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName",
+                "amount",
+                "token"
+            ]
+        }
+    },
+    {
+        "name": "withdraw",
+        "description": "Withdraws amount of a token from a pool on a protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName",
+                "amount",
+                "token"
+            ]
+        }
+    },
+    {
+        "name": "claim",
+        "description": "Claims new tokens or rewards from a protocol or pool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName"
+            ]
+        }
+    },
+    {
+        "name": "borrow",
+        "description": "Borrows amount of a token from a protocol or pool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName",
+                "amount",
+                "token"
+            ]
+        }
+    },
+    {
+        "name": "lend",
+        "description": "Lends amount of a token to a protocol or pool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName",
+                "amount",
+                "token"
+            ]
+        }
+    },
+    {
+        "name": "repay",
+        "description": "Repays amount of a token to a protocol or pool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName",
+                "amount",
+                "token"
+            ]
+        }
+    },
+    {
+        "name": "stake",
+        "description": "Stakes amount of a token on a protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName",
+                "amount",
+                "token"
+            ]
+        }
+    },
+    {
+        "name": "unstake",
+        "description": "Unstakes amount of a token from a protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName",
+                "amount",
+                "token"
+            ]
+        }
+    },
+    {
+        "name": "restake",
+        "description": "Restakes amount of a token on a protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName",
+                "amount",
+                "token"
+            ]
+        }
+    },
+    {
+        "name": "harvest",
+        "description": "Harvests new tokens or rewards from a protocol or pool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName"
+            ]
+        }
+    },
+    {
+        "name": "long",
+        "description": "Uses input amount of input token to long another token with leverage on a protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "inputAmount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "inputToken": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "outputToken": {
+                    "type": "string",
+                    "description": "The token to receive"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                },
+                "leverageMultiplier": {
+                    "type": "string",
+                    "description": "The multiplier to apply to the input token when doing long or short with leverage."
+                }
+            },
+            "required": [
+                "protocolName",
+                "inputAmount",
+                "inputToken",
+                "outputToken",
+                "leverageMultipler"
+            ]
+        }
+    },
+    {
+        "name": "short",
+        "description": "Uses input amount of input token to short another token with leverage on a protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "inputAmount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "inputToken": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "outputToken": {
+                    "type": "string",
+                    "description": "The token to receive"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                },
+                "leverageMultiplier": {
+                    "type": "string",
+                    "description": "The multiplier to apply to the input token when doing long or short with leverage."
+                }
+            },
+            "required": [
+                "protocolName",
+                "inputAmount",
+                "inputToken",
+                "outputToken",
+                "leverageMultipler"
+            ]
+        }
+    },
+    {
+        "name": "lock",
+        "description": "Locks amount of token on a protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": ""
+                }
+            },
+            "required": [
+                "protocolName",
+                "amount",
+                "token"
+            ]
+        }
+    },
+    {
+        "name": "unlock",
+        "description": "Unlocks amount of token from a protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName",
+                "amount",
+                "token"
+            ]
+        }
+    },
+    {
+        "name": "loop",
+        "description": "Loops a token, possibly with another token, on a protocol or pool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "inputAmount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "inputToken": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "outputToken": {
+                    "type": "string",
+                    "description": "The token to receive"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                },
+                "numberLoops": {
+                    "type": "string",
+                    "description": "The number of times to loop or unloop."
+                }
+            },
+            "required": [
+                "protocolName",
+                "inputAmount",
+                "inputToken",
+                "numberLoops"
+            ]
+        }
+    },
+    {
+        "name": "unloop",
+        "description": "Loops a token, possibly with another token, on a protocol or pool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "inputAmount": {
+                    "type": "string",
+                    "description": "The amount of tokens to use"
+                },
+                "inputToken": {
+                    "type": "string",
+                    "description": "The token to use"
+                },
+                "outputToken": {
+                    "type": "string",
+                    "description": "The token to receive"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                },
+                "numberLoops": {
+                    "type": "string",
+                    "description": "The number of times to loop or unloop."
+                }
+            },
+            "required": [
+                "protocolName",
+                "inputAmount",
+                "inputToken",
+                "numberLoops"
+            ]
+        }
+    },
+    {
+        "name": "vote",
+        "description": "Votes on a protocol or pool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolName": {
+                    "type": "string",
+                    "description": "The protocol to use"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "The name of the pool to use on the specified protocol"
+                },
+                "chainName": {
+                    "type": "string",
+                    "description": "The blockchain where the action should occur"
+                }
+            },
+            "required": [
+                "protocolName"
+            ]
+        }
+    },
+    {
+        "name": "condition",
+        "description": "Returns when to perform a user's specific action by comparing subject to value",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "enum": [
+                        "gas",
+                        "price"
+                    ],
+                    "description": "The type of data that initiates the user's query."
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The data that initiates the user's query."
+                },
+                "comparator": {
+                    "enum": [
+                        "greater than",
+                        "less than",
+                        "greater than or equal to",
+                        "less than or equal to",
+                        "equals"
+                    ],
+                    "description": "A comparison operator to compare subject to value (greater than, less than, etc)."
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The value at which if the subject compares to True, the query runs."
+                },
+                "numActions": {
+                    "type": "integer",
+                    "default": 1,
+                    "minimum": 1,
+                    "description": "The number of user actions that this condition applies to."
+                }
+            },
+            "unevaluatedProperties": false,
+            "required": [
+                "type",
+                "comparator",
+                "value",
+                "numActions"
+            ],
+            "anyOf": [
+                {
+                    "properties": {
+                        "type": {
+                            "const": "gas"
+                        },
+                        "subject": false
+                    }
+                },
+                {
+                    "properties": {
+                        "type": {
+                            "const": "price"
+                        }
+                    },
+                    "required": [
+                        "subject"
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "schedule",
+        "description": "Returns when to perform a user's specific action or actions by scheduling based on user requested date and/or time.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "The date or time at which the user's specific action or actions should run."
+                },
+                "repeat_value": {
+                    "type": "string",
+                    "format": "duration",
+                    "description": "The length of time between repeats of the user's specific action or actions."
+                },
+                "numActions": {
+                    "type": "integer",
+                    "default": 1,
+                    "description": "The number of user actions that this scheduling applies to."
+                }
+            },
+            "unevaluatedProperties": false,
+            "required": [
+                "numActions"
+            ],
+            "anyOf": [
+                {
+                    "required": [
+                        "value"
+                    ]
+                },
+                {
+                    "required": [
+                        "repeat_value"
+                    ]
+                }
+            ]
+        }
+    }
+]

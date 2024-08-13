@@ -1,0 +1,413 @@
+{
+  "harvest my balancer position and stake the rewards": [
+    [
+      { "name": "claim", "args": { "protocolName": "balancer" } },
+      {
+        "name": "stake",
+        "args": {
+          "protocolName": "balancer",
+          "amount": "outputAmount",
+          "token": "outputToken"
+        }
+      }
+    ]
+  ],
+  "when my camelot rewards balance is greater than 10 eth, swap to usdc": [
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "camelot rewards",
+          "comparator": ">=",
+          "value": "10",
+          "value_token": "eth",
+          "type": "balance"
+        }
+      },
+      {
+        "name": "swap",
+        "args": { "inputToken": "camelot rewards", "outputToken": "usdc" }
+      }
+    ]
+  ],
+  "when my dolomite rewards hit $2000, swap them for usdc": [
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "dolomite rewards",
+          "comparator": "==",
+          "value": "2000",
+          "value_units": "usd",
+          "type": "balance"
+        }
+      },
+      {
+        "name": "swap",
+        "args": { "inputToken": "dolomite rewards", "outputToken": "usdc" }
+      }
+    ],
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "dolomite rewards",
+          "comparator": "==",
+          "value": "2000",
+          "value_units": "usd",
+          "type": "price"
+        }
+      },
+      {
+        "name": "swap",
+        "args": { "inputToken": "dolomite rewards", "outputToken": "usdc" }
+      }
+    ]
+  ],
+  "when my dolomite rewards balance hits $2000, swap them for usdc": [
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "dolomite rewards",
+          "comparator": "==",
+          "value": "2000",
+          "value_units": "usd",
+          "type": "balance"
+        }
+      },
+      {
+        "name": "swap",
+        "args": { "inputToken": "dolomite rewards", "outputToken": "usdc" }
+      }
+    ],
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "dolomite rewards",
+          "comparator": "==",
+          "value": "2000",
+          "value_units": "usd",
+          "type": "balance"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "dolomite rewards",
+          "outputToken": "usdc"
+        }
+      }
+    ]
+  ],
+  "once my plutus rewards hit 2 eth, claim rewards and transfer to person.eth": [
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "plutus rewards",
+          "comparator": "==",
+          "value": "2",
+          "value_token": "eth",
+          "type": "balance"
+        }
+      },
+      { "name": "claim", "args": { "protocolName": "plutus" } },
+      {
+        "name": "transfer",
+        "args": {
+          "token": "outputToken",
+          "amount": "outputAmount",
+          "recipient": "person.eth"
+        }
+      }
+    ]
+  ],
+  "when camelot rewards balance hits $100. claim and convert all rewards to weth. then deposit in spice vault.": [
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "camelot rewards",
+          "comparator": "==",
+          "value": "100",
+          "value_units": "usd",
+          "type": "balance"
+        }
+      },
+      { "name": "claim", "args": { "protocolName": "camelot" } },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "outputToken",
+          "outputToken": "weth"
+        }
+      },
+      {
+        "name": "deposit",
+        "args": {
+          "protocolName": "spice",
+          "amount": "outputAmount",
+          "token": "weth"
+        }
+      }
+    ],
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "camelot rewards",
+          "comparator": "==",
+          "value": "100",
+          "type": "balance"
+        }
+      },
+      {
+        "name": "claim",
+        "args": { "protocolName": "camelot", "token": "all" }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "outputToken",
+          "outputToken": "weth"
+        }
+      },
+      {
+        "name": "deposit",
+        "args": {
+          "protocolName": "spice",
+          "amount": "outputAmount",
+          "token": "weth"
+        }
+      }
+    ]
+  ],
+  "compound my staking rewards": [
+    [
+      { "name": "claim", "args": { "protocolName": "all" } },
+      {
+        "name": "deposit",
+        "args": {
+          "amount": "outputAmount",
+          "token": "outputToken",
+          "protocolName": "all"
+        }
+      }
+    ]
+  ],
+  "withdraw half the liquidity from my dolomite usdc-usdt position": [
+    [
+      {
+        "name": "withdraw",
+        "args": {
+          "protocolName": "dolomite",
+          "poolName": "usdc-usdt",
+          "amount": "half",
+          "token": "liquidity"
+        }
+      }
+    ],
+    [
+      {
+        "name": "withdraw",
+        "args": {
+          "protocolName": "dolomite",
+          "poolName": "usdc-usdt",
+          "amount": "half"
+        }
+      }
+    ]
+  ],
+  "claim weth-grail lp rewards from camelot and sell for usdc": [
+    [
+      {
+        "name": "claim",
+        "args": { "protocolName": "camelot", "token": "weth-grail lp" }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "weth-grail lp",
+          "outputToken": "usdc"
+        }
+      }
+    ],
+    [
+      {
+        "name": "claim",
+        "args": { "protocolName": "camelot", "poolName": "weth-grail" }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "outputToken",
+          "outputToken": "usdc"
+        }
+      }
+    ]
+  ],
+  "buy jones with half my eth, deposit into the eth-jones pool on sushi, then trade lp for plsjones": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "half",
+          "inputToken": "eth",
+          "outputToken": "jones"
+        }
+      },
+      {
+        "name": "deposit",
+        "args": {
+          "protocolName": "sushi",
+          "poolName": "eth-jones",
+          "amount": "outputAmount",
+          "token": "jones"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "outputToken",
+          "outputToken": "plsjones"
+        }
+      }
+    ],
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "half",
+          "inputToken": "eth",
+          "outputToken": "jones"
+        }
+      },
+      {
+        "name": "deposit",
+        "args": {
+          "protocolName": "sushi",
+          "poolName": "eth-jones",
+          "amount": "outputAmount",
+          "token": "jones"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "lp",
+          "outputToken": "plsjones"
+        }
+      }
+    ]
+  ],
+  "pull my liquidity on uniswap if price falls below x": [
+    [
+      {
+        "name": "withdraw",
+        "args": {
+          "protocolName": "uniswap",
+          "token": "liquidity",
+          "amount": "all"
+        }
+      },
+      {
+        "name": "condition",
+        "args": {
+          "subject": "liquidity",
+          "comparator": "<=",
+          "value": "x",
+          "type": "price",
+          "value_units": "usd"
+        }
+      }
+    ]
+  ],
+  "harvest all my positions on arbitrum": [
+    [
+      {
+        "name": "claim",
+        "args": { "protocolName": "all", "chainName": "arbitrum" }
+      }
+    ]
+  ],
+  "harvest my positions every wednesday": [
+    [
+      { "name": "claim", "args": { "protocolName": "all" } },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "wednesday",
+          "recurrence": { "type": "weeks", "interval": 1 }
+        }
+      }
+    ]
+  ],
+  "claim and restake rewards from all my positions every monday": [
+    [
+      { "name": "claim", "args": { "protocolName": "all" } },
+      {
+        "name": "stake",
+        "args": {
+          "protocolName": "all",
+          "amount": "outputAmount",
+          "token": "outputToken"
+        }
+      },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "monday",
+          "recurrence": { "type": "weeks", "interval": 1 }
+        }
+      }
+    ],
+    [
+      { "name": "claim", "args": { "protocolName": "all" } },
+      {
+        "name": "stake",
+        "args": {
+          "protocolName": "all",
+          "amount": "outputAmount",
+          "token": "outputToken"
+        }
+      },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "monday",
+          "recurrence": { "type": "weeks", "interval": 1 }
+        }
+      }
+    ]
+  ],
+  "harvesting on camelot": [
+    [{ "name": "claim", "args": { "protocolName": "camelot" } }]
+  ],
+  "vote on my thena position every week on wednesday": [
+    [
+      {
+        "name": "vote",
+        "args": { "protocolName": "thena", "chainName": "ethereum" }
+      },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "wednesday",
+          "recurrence": { "type": "weeks", "interval": 1 }
+        }
+      }
+    ]
+  ],
+  "withdraw position from trader joe": [
+    [{ "name": "withdraw", "args": { "protocolName": "trader joe" } }]
+  ]
+}

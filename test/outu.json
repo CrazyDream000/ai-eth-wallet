@@ -1,0 +1,142 @@
+{
+    "kind": "user",
+    "methods": {
+        "ADDRESSES_PROVIDER()": {
+            "notice": "Returns the PoolAddressesProvider connected to this contract"
+        },
+        "BRIDGE_PROTOCOL_FEE()": {
+            "notice": "Returns the part of the bridge fees sent to protocol"
+        },
+        "FLASHLOAN_PREMIUM_TOTAL()": {
+            "notice": "Returns the total fee on flash loans"
+        },
+        "FLASHLOAN_PREMIUM_TO_PROTOCOL()": {
+            "notice": "Returns the part of the flashloan fees sent to protocol"
+        },
+        "MAX_NUMBER_RESERVES()": {
+            "notice": "Returns the maximum number of reserves supported to be listed in this Pool"
+        },
+        "MAX_STABLE_RATE_BORROW_SIZE_PERCENT()": {
+            "notice": "Returns the percentage of available liquidity that can be borrowed at once at stable rate"
+        },
+        "backUnbacked(address,uint256,uint256)": {
+            "notice": "Back the current unbacked underlying with `amount` and pay `fee`."
+        },
+        "borrow(address,uint256,uint256,uint16,address)": {
+            "notice": "Allows users to borrow a specific `amount` of the reserve underlying asset, provided that the borrower already supplied enough collateral, or he was given enough allowance by a credit delegator on the corresponding debt token (StableDebtToken or VariableDebtToken) - E.g. User borrows 100 USDC passing as `onBehalfOf` his own address, receiving the 100 USDC in his wallet   and 100 stable/variable debt tokens, depending on the `interestRateMode`"
+        },
+        "configureEModeCategory(uint8,(uint16,uint16,uint16,address,string))": {
+            "notice": "Configures a new category for the eMode."
+        },
+        "deposit(address,uint256,address,uint16)": {
+            "notice": "Supplies an `amount` of underlying asset into the reserve, receiving in return overlying aTokens. - E.g. User supplies 100 USDC and gets in return 100 aUSDC"
+        },
+        "dropReserve(address)": {
+            "notice": "Drop a reserve"
+        },
+        "finalizeTransfer(address,address,address,uint256,uint256,uint256)": {
+            "notice": "Validates and finalizes an aToken transfer"
+        },
+        "flashLoan(address,address[],uint256[],uint256[],address,bytes,uint16)": {
+            "notice": "Allows smartcontracts to access the liquidity of the pool within one transaction, as long as the amount taken plus a fee is returned."
+        },
+        "flashLoanSimple(address,address,uint256,bytes,uint16)": {
+            "notice": "Allows smartcontracts to access the liquidity of the pool within one transaction, as long as the amount taken plus a fee is returned."
+        },
+        "getConfiguration(address)": {
+            "notice": "Returns the configuration of the reserve"
+        },
+        "getEModeCategoryData(uint8)": {
+            "notice": "Returns the data of an eMode category"
+        },
+        "getReserveAddressById(uint16)": {
+            "notice": "Returns the address of the underlying asset of a reserve by the reserve id as stored in the DataTypes.ReserveData struct"
+        },
+        "getReserveData(address)": {
+            "notice": "Returns the state and configuration of the reserve"
+        },
+        "getReserveNormalizedIncome(address)": {
+            "notice": "Returns the normalized income of the reserve"
+        },
+        "getReserveNormalizedVariableDebt(address)": {
+            "notice": "Returns the normalized variable debt per unit of asset"
+        },
+        "getReservesList()": {
+            "notice": "Returns the list of the underlying assets of all the initialized reserves"
+        },
+        "getUserAccountData(address)": {
+            "notice": "Returns the user account data across all the reserves"
+        },
+        "getUserConfiguration(address)": {
+            "notice": "Returns the configuration of the user across all the reserves"
+        },
+        "getUserEMode(address)": {
+            "notice": "Returns the eMode the user is using"
+        },
+        "initReserve(address,address,address,address,address)": {
+            "notice": "Initializes a reserve, activating it, assigning an aToken and debt tokens and an interest rate strategy"
+        },
+        "initialize(address)": {
+            "notice": "Initializes the Pool."
+        },
+        "liquidationCall(address,address,address,uint256,bool)": {
+            "notice": "Function to liquidate a non-healthy position collateral-wise, with Health Factor below 1 - The caller (liquidator) covers `debtToCover` amount of debt of the user getting liquidated, and receives   a proportionally amount of the `collateralAsset` plus a bonus to cover market risk"
+        },
+        "mintToTreasury(address[])": {
+            "notice": "Mints the assets accrued through the reserve factor to the treasury in the form of aTokens"
+        },
+        "mintUnbacked(address,uint256,address,uint16)": {
+            "notice": "Mints an `amount` of aTokens to the `onBehalfOf`"
+        },
+        "rebalanceStableBorrowRate(address,address)": {
+            "notice": "Rebalances the stable interest rate of a user to the current stable rate defined on the reserve. - Users can be rebalanced if the following conditions are satisfied:     1. Usage ratio is above 95%     2. the current supply APY is below REBALANCE_UP_THRESHOLD * maxVariableBorrowRate, which means that too        much has been borrowed at a stable rate and suppliers are not earning enough"
+        },
+        "repay(address,uint256,uint256,address)": {
+            "notice": "Repays a borrowed `amount` on a specific reserve, burning the equivalent debt tokens owned - E.g. User repays 100 USDC, burning 100 variable/stable debt tokens of the `onBehalfOf` address"
+        },
+        "repayWithATokens(address,uint256,uint256)": {
+            "notice": "Repays a borrowed `amount` on a specific reserve using the reserve aTokens, burning the equivalent debt tokens - E.g. User repays 100 USDC using 100 aUSDC, burning 100 variable/stable debt tokens"
+        },
+        "repayWithPermit(address,uint256,uint256,address,uint256,uint8,bytes32,bytes32)": {
+            "notice": "Repay with transfer approval of asset to be repaid done via permit function see: https://eips.ethereum.org/EIPS/eip-2612 and https://eips.ethereum.org/EIPS/eip-713"
+        },
+        "rescueTokens(address,address,uint256)": {
+            "notice": "Rescue and transfer tokens locked in this contract"
+        },
+        "resetIsolationModeTotalDebt(address)": {
+            "notice": "Resets the isolation mode total debt of the given asset to zero"
+        },
+        "setConfiguration(address,(uint256))": {
+            "notice": "Sets the configuration bitmap of the reserve as a whole"
+        },
+        "setReserveInterestRateStrategyAddress(address,address)": {
+            "notice": "Updates the address of the interest rate strategy contract"
+        },
+        "setUserEMode(uint8)": {
+            "notice": "Allows a user to use the protocol in eMode"
+        },
+        "setUserUseReserveAsCollateral(address,bool)": {
+            "notice": "Allows suppliers to enable/disable a specific supplied asset as collateral"
+        },
+        "supply(address,uint256,address,uint16)": {
+            "notice": "Supplies an `amount` of underlying asset into the reserve, receiving in return overlying aTokens. - E.g. User supplies 100 USDC and gets in return 100 aUSDC"
+        },
+        "supplyWithPermit(address,uint256,address,uint16,uint256,uint8,bytes32,bytes32)": {
+            "notice": "Supply with transfer approval of asset to be supplied done via permit function see: https://eips.ethereum.org/EIPS/eip-2612 and https://eips.ethereum.org/EIPS/eip-713"
+        },
+        "swapBorrowRateMode(address,uint256)": {
+            "notice": "Allows a borrower to swap his debt between stable and variable mode, or vice versa"
+        },
+        "updateBridgeProtocolFee(uint256)": {
+            "notice": "Updates the protocol fee on the bridging"
+        },
+        "updateFlashloanPremiums(uint128,uint128)": {
+            "notice": "Updates flash loan premiums. Flash loan premium consists of two parts: - A part is sent to aToken holders as extra, one time accumulated interest - A part is collected by the protocol treasury"
+        },
+        "withdraw(address,uint256,address)": {
+            "notice": "Withdraws an `amount` of underlying asset from the reserve, burning the equivalent aTokens owned E.g. User has 100 aUSDC, calls withdraw() and receives 100 USDC, burning the 100 aUSDC"
+        }
+    },
+    "notice": "Main point of interaction with an Aave protocol's market - Users can:   # Supply   # Withdraw   # Borrow   # Repay   # Swap their loans between variable and stable rate   # Enable/disable their supplied assets as collateral rebalance stable rate borrow positions   # Liquidate positions   # Execute Flash Loans",
+    "version": 1
+}

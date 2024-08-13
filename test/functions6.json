@@ -1,0 +1,159 @@
+[
+  {
+    "name": "action",
+    "description": "Performs specific actions with an amount of a token on specific chains, apps, exchanges, or protocols ",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "enum": ["transfer", "yield", "swap", "bridge", "deposit", "withdraw", "claim", "borrow", "lend", "stake", "unstake", "restake", "harvest", "long", "short", "close", "lock", "unlock", "loop", "unloop", "vote"],
+          "description": "The action to be performed within the protocol."
+        },
+        "protocolName": {
+	  "enum": ["all", "default", "Compound", "Aave", "Rodeo", "JonesDAO", "Kwenta", "Radiant", "Morpho", "KyberSwap", "MMF", "Solidly", "Stargate", "Chronos", "Thena", "Redacted Cartel"],
+          "description": "The name of the protocol",
+          "default": "default"                
+        },
+        "poolName": {
+          "type": "string",
+          "description": "The name of the pool on the protocol.",
+          "default": "default"
+        },
+        "inputAmount": {
+          "anyOf": [
+	    { "type": "number" },
+	    { "const": "default" }
+	  ],
+	  "default": "default",
+          "description": "The amount of tokens for the action."
+        },
+        "inputPercent": {
+	  "type": "number",
+	  "minimum": 0,
+	  "maximum": 100,
+          "description": "The percent of tokens for the action."
+        },
+        "inputToken": {
+          "type": "string",
+          "description": "The input token for the action."
+        },
+        "recipient": {
+          "type": "string",
+          "description": "The recipient's address for a token transfer."
+        },
+        "outputToken": {
+          "type": "string",
+          "description": "The output token for the action."
+        },
+        "chainName": {
+	  "enum":  ["Ethereum", "Base", "Optimism", "Arbitrum", "Avalanche", "Gnosis"],
+          "description": "The name of the blockchain for the action."
+        },
+        "destinationChainName": {
+	  "enum":  ["Ethereum", "Base", "Optimism", "Arbitrum", "Avalanche", "Gnosis"],
+          "description": "The name of the destination blockchain when bridging."
+        },
+        "leverageMultiplier": {
+          "type": "number",
+	  "minimum": 1,
+          "description": "The multiplier to apply to the input token when doing long or short with leverage."
+        },
+        "numberLoops": {
+          "type": "integer",
+	  "minimum": 1,
+          "description": "The number of times to loop or unloop."
+        }
+      },
+      "allOf": [
+	{
+	  "anyOf": [
+	    { "required": [ "inputAmount" ]},
+	    { "required": [ "inputPercent" ]}
+	    ]
+	},
+	{
+	  "anyOf": [
+	    { "properties": { "action": { "enum": [ "long", "short" ] }}, "required": [ "leverageMultiplier" ] },
+	    { "not": { "properties": { "action": { "enum": [ "long", "short" ] }}}, "leverageMultiplier": false  },
+	    { "properties": { "action": { "enum": [ "loop", "unloop" ] }}, "required": [ "numLoops" ] },
+	    { "not": { "properties": { "action": { "enum": [ "loop", "unloop" ] }}}, "numLoops": false  }
+	  ]
+	}
+      ],
+      "unevaluatedProperties": false,
+      "required": [ "action", "inputAmount" ]
+    }
+  },
+  {
+    "name": "condition",
+    "description": "Returns when to perform a user's specific action by comparing subject to value.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": ["gas", "price"],
+          "description": "The type of data that initiates the user's query."
+        },
+        "subject": {
+          "type": "string",
+          "description": "The data that initiates the user's query."
+        },
+        "comparator": {
+          "enum": ["greater than", "less than", "greater than or equal to", "less than or equal to", "equals"],
+          "description": "A comparison operator to compare subject to value (greater than, less than, etc)."
+        },
+        "value": {
+          "type": "string",
+          "description": "The value at which if the subject compares to True, the query runs."
+        },
+        "numActions": {
+          "type": "integer",
+	  "default": 1,
+	  "minimum": 1,
+          "description": "The number of user actions that this condition applies to."
+        }
+      },
+      "unevaluatedProperties": false,
+      "required": [
+        "type",
+        "comparator",
+        "value",
+        "numActions"
+      ],
+      "anyOf": [
+	{ "properties": { "type": { "const": "gas" }, "subject": false } },
+	{ "properties": { "type": { "const": "price" } }, "required": [ "subject" ]  }
+      ]
+    }
+  },
+  {
+    "name": "time",
+    "description": "Returns when to perform a user's specific action or actions by scheduling based on user requested time.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+	  "format": "date",
+          "description": "The time at which the user's specific action or actions should run."
+        },
+        "repeat_value": {
+          "type": "string",
+	  "format": "duration",
+          "description": "The length of time between repeats of the user's specific action or actions."
+        },
+        "numActions": {
+          "type": "integer",
+	  "default": 1,
+          "description": "The number of user actions that this time scheduling applies to."
+        }
+      },
+      "unevaluatedProperties": false,
+      "required": [ "numActions" ],
+      "anyOf": [
+	{ "required": [ "value" ] },
+	{ "required": [ "repeat_value" ] }
+      ]
+    }
+  }
+]

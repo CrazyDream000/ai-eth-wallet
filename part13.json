@@ -1,0 +1,1075 @@
+{
+  "stake 100 s*usdc into stargate": [
+    [
+      {
+        "name": "stake",
+        "args": {
+          "amount": "100",
+          "token": "s*usdc",
+          "protocolName": "stargate"
+        }
+      }
+    ]
+  ],
+  "stake 100 s*usdt into stargate": [
+    [
+      {
+        "name": "stake",
+        "args": {
+          "protocolName": "stargate",
+          "amount": "100",
+          "token": "s*usdt"
+        }
+      }
+    ]
+  ],
+  "deposit 1 eth on camelot and swap 1 eth for usdc": [
+    [
+      {
+        "name": "deposit",
+        "args": { "protocolName": "camelot", "amount": "1", "token": "eth" }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "1",
+          "inputToken": "eth",
+          "outputToken": "usdc"
+        }
+      }
+    ]
+  ],
+  "swap 0.005 eth on base to base": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "0.005",
+          "inputToken": "eth",
+          "outputToken": "base",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "use jumper on arbitrum and bridge .01 eth from arbitrum to base": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": ".01",
+          "token": "eth",
+          "sourceChainName": "arbitrum",
+          "destinationChainName": "base",
+          "protocolName": "jumper"
+        }
+      }
+    ]
+  ],
+  "bridge all my usdt from bsc to base and swap it to eth on base": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "all",
+          "token": "usdt",
+          "sourceChainName": "bsc",
+          "destinationChainName": "base"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "usdt",
+          "outputToken": "eth",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "swap half of 0xdfbb60d3245345ad8427c0a36a69e206e9de8fa7 to eth on base": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "half",
+          "inputToken": "0xdfbb60d3245345ad8427c0a36a69e206e9de8fa7",
+          "outputToken": "eth",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "deposit 4.955 premia into sy-stargate-usdt pool on pendle": [
+    [
+      {
+        "name": "deposit",
+        "args": {
+          "protocolName": "pendle",
+          "poolName": "sy-stargate-usdt",
+          "amount": "4.955",
+          "token": "premia"
+        }
+      }
+    ]
+  ],
+  "bridge all of my matic from polygon to bsc bnb": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "all",
+          "token": "matic",
+          "sourceChainName": "polygon",
+          "destinationChainName": "bsc"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "matic",
+          "outputToken": "bnb",
+          "chainName": "bsc"
+        }
+      }
+    ]
+  ],
+  "bridge 9 usdt from bsc to avalanche avax": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "9",
+          "token": "usdt",
+          "sourceChainName": "bsc",
+          "destinationChainName": "avalanche"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "usdt",
+          "outputToken": "avax",
+          "chainName": "avalanche"
+        }
+      }
+    ]
+  ],
+  "bridge 50 usdt from bsc to base eth": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "50",
+          "token": "usdt",
+          "sourceChainName": "bsc",
+          "destinationChainName": "base"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "usdt",
+          "outputToken": "eth",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "swap 100 usdc to usdt on arbitrum and send 100 usdt to 0x0b1a89664970ebeb16d6a1a039017049eea45a20": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputToken": "usdc",
+          "outputToken": "usdt",
+          "outputAmount": "100",
+          "chainName": "arbitrum"
+        }
+      },
+      {
+        "name": "transfer",
+        "args": {
+          "amount": "100",
+          "token": "usdt",
+          "recipient": "0x0b1a89664970ebeb16d6a1a039017049eea45a20",
+          "chainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "when gas is below 0.15 long doge with 5x leverage with 310 usdc on gmx on arbitrum": [
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "gas",
+          "comparator": "<=",
+          "value": "0.15",
+          "type": "gas"
+        }
+      },
+      {
+        "name": "long",
+        "args": {
+          "protocolName": "gmx",
+          "inputAmount": "310",
+          "inputToken": "usdc",
+          "outputToken": "doge",
+          "chainName": "arbitrum",
+          "leverageMultiplier": "5x"
+        }
+      }
+    ],
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "gas",
+          "comparator": "<=",
+          "value": "0.15",
+          "type": "gas"
+        }
+      },
+      {
+        "name": "long",
+        "args": {
+          "protocolName": "gmx",
+          "inputAmount": "310",
+          "inputToken": "usdc",
+          "outputToken": "doge",
+          "chainName": "arbitrum",
+          "leverageMultiplier": "5"
+        }
+      }
+    ]
+  ],
+  "close doge position on gmx on arbitrum": [
+    [
+      {
+        "name": "close",
+        "args": {
+          "protocolName": "gmx",
+          "inputToken": "doge",
+          "chainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "withdraw 9 usdc from the usdc-arb pool on compound ": [
+    [
+      {
+        "name": "withdraw",
+        "args": {
+          "protocolName": "compound",
+          "poolName": "usdc-arb",
+          "amount": "9",
+          "token": "usdc"
+        }
+      }
+    ]
+  ],
+  "lend 10 usdc on compound on arbitru ": [
+    [
+      {
+        "name": "lend",
+        "args": {
+          "protocolName": "compound",
+          "amount": "10",
+          "token": "usdc",
+          "chainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "sell gmx on arbitrum to eth": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputToken": "gmx",
+          "outputToken": "eth",
+          "chainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "sell 20 usdc for eth every hour starting at 10:45 pm today": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "20",
+          "inputToken": "usdc",
+          "outputToken": "eth"
+        }
+      },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "10:45 pm today",
+          "recurrence": { "type": "hours", "interval": 1 }
+        }
+      }
+    ]
+  ],
+  "swap $100 worth of eth to usdc on sushi": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "protocolName": "sushi",
+          "inputAmount": "100",
+          "inputAmountUnits": "usd",
+          "inputToken": "eth",
+          "outputToken": "usdc"
+        }
+      }
+    ]
+  ],
+  "deposit 99 usdc and an equal amount of eth on uniswap on arbitrum": [
+    [
+      {
+        "name": "deposit",
+        "args": {
+          "protocolName": "uniswap",
+          "amount": "99",
+          "token": "usdc",
+          "poolName": "usdc-eth",
+          "chainName": "arbitrum"
+        }
+      }
+    ],
+    [
+      {
+        "name": "deposit",
+        "args": {
+          "protocolName": "uniswap",
+          "amount": "99",
+          "token": "usdc",
+          "chainName": "arbitrum"
+        }
+      },
+      {
+        "name": "deposit",
+        "args": {
+          "protocolName": "uniswap",
+          "amount": "outputAmount",
+          "token": "eth",
+          "chainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "bridge 100 usdc and 0.04 eth to arbitrum": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "100",
+          "token": "usdc",
+          "destinationChainName": "arbitrum"
+        }
+      },
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "0.04",
+          "token": "eth",
+          "destinationChainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "swap 100 usdc to eth if eth price falls under 3100": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "100",
+          "inputToken": "usdc",
+          "outputToken": "eth"
+        }
+      },
+      {
+        "name": "condition",
+        "args": {
+          "subject": "eth",
+          "comparator": "<=",
+          "value": "3100",
+          "type": "price",
+          "value_units": "usd"
+        }
+      }
+    ]
+  ],
+  "please swap my aero on base to eth": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputToken": "aero",
+          "outputToken": "eth",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "swap all my gmx, lode, wbtc, and arb for eth on arbitrum": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": ["gmx", "lode", "wbtc", "arb"],
+          "outputToken": "eth",
+          "chainName": "arbitrum"
+        }
+      }
+    ],
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "gmx",
+          "outputToken": "eth",
+          "chainName": "arbitrum"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "lode",
+          "outputToken": "eth",
+          "chainName": "arbitrum"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "wbtc",
+          "outputToken": "eth",
+          "chainName": "arbitrum"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "arb",
+          "outputToken": "eth",
+          "chainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "bridge matic on polygon to usdt on optimism": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "token": "matic",
+          "sourceChainName": "polygon",
+          "destinationChainName": "optimism"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "matic",
+          "outputToken": "usdt",
+          "chainName": "optimism"
+        }
+      }
+    ]
+  ],
+  "transfer 100 usdc on arbitrum to 0xe08583e015f358ce59489deba17b9774833c9f8e": [
+    [
+      {
+        "name": "transfer",
+        "args": {
+          "amount": "100",
+          "token": "usdc",
+          "recipient": "0xe08583e015f358ce59489deba17b9774833c9f8e",
+          "chainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "close my 3x leverage doge position on gmx on arbitrum": [
+    [
+      {
+        "name": "close",
+        "args": {
+          "protocolName": "gmx",
+          "inputToken": "doge",
+          "chainName": "arbitrum",
+          "leverageMultiplier": "3x"
+        }
+      }
+    ]
+  ],
+  "close my 3x leverage doge long on gmx on arbitrum": [
+    [
+      {
+        "name": "close",
+        "args": {
+          "protocolName": "gmx",
+          "inputToken": "doge",
+          "chainName": "arbitrum",
+          "leverageMultiplier": "3x"
+        }
+      }
+    ],
+    [
+      {
+        "name": "close",
+        "args": {
+          "protocolName": "gmx",
+          "outputToken": "doge",
+          "chainName": "arbitrum",
+          "leverageMultiplier": "3x"
+        }
+      }
+    ]
+  ],
+  "bridge arbitrum usdt to base usdc": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "token": "usdt",
+          "sourceChainName": "arbitrum",
+          "destinationChainName": "base"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "usdt",
+          "outputToken": "usdc",
+          "chainName": "base"
+        }
+      }
+    ],
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "all",
+          "token": "usdt",
+          "sourceChainName": "arbitrum",
+          "destinationChainName": "base"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "usdt",
+          "outputToken": "usdc",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "buy eth with 100 usdc whenever eth goes below $3100 until tomorrow": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "100",
+          "inputToken": "usdc",
+          "outputToken": "eth"
+        }
+      },
+      {
+        "name": "condition",
+        "args": {
+          "subject": "eth",
+          "comparator": "<=",
+          "value": "3100",
+          "value_units": "usd",
+          "type": "price"
+        }
+      },
+      { "name": "time", "args": { "end_time": "tomorrow" } }
+    ]
+  ],
+  "buy eth with 100 usdc whenever eth goes below $3100": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "100",
+          "inputToken": "usdc",
+          "outputToken": "eth"
+        }
+      },
+      {
+        "name": "condition",
+        "args": {
+          "subject": "eth",
+          "comparator": "<=",
+          "value": "3100",
+          "type": "price",
+          "value_units": "usd"
+        }
+      }
+    ]
+  ],
+  "when gas is sub 21, swap $2000 worth of wbtc for eth": [
+    [
+      {
+        "name": "condition",
+        "args": {
+          "subject": "gas",
+          "comparator": "<=",
+          "value": "21",
+          "type": "gas"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "2000",
+          "inputAmountUnits": "usd",
+          "inputToken": "wbtc",
+          "outputToken": "eth"
+        }
+      }
+    ]
+  ],
+  "swap 20$ of 0xd07379a755a8f11b57610154861d694b2a0f615a to eth on base": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "20",
+          "inputAmountUnits": "usd",
+          "inputToken": "0xd07379a755a8f11b57610154861d694b2a0f615a",
+          "outputToken": "eth",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "swap 500$ of 0xd07379a755a8f11b57610154861d694b2a0f615a to eth on base": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "500",
+          "inputAmountUnits": "usd",
+          "inputToken": "0xd07379a755a8f11b57610154861d694b2a0f615a",
+          "outputToken": "eth",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "swap 5 polygon to eth on polygon": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "5",
+          "inputToken": "polygon",
+          "outputToken": "eth",
+          "chainName": "polygon"
+        }
+      }
+    ]
+  ],
+  "swap all my base tokens to eth on base and then bridhe these eth on eth. then send all these eth to this addy: 0xd896c7c5b9557e51c6339680bb9cab817299305c": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "base",
+          "outputToken": "eth",
+          "chainName": "base"
+        }
+      },
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "outputAmount",
+          "token": "eth",
+          "sourceChainName": "base",
+          "destinationChainName": "ethereum"
+        }
+      },
+      {
+        "name": "transfer",
+        "args": {
+          "amount": "outputAmount",
+          "token": "eth",
+          "recipient": "0xd896c7c5b9557e51c6339680bb9cab817299305c",
+          "chainName": "ethereum"
+        }
+      }
+    ]
+  ],
+  "swap all of my grail to eth on arbitrum and bridge .005 eth to base": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "grail",
+          "outputToken": "eth",
+          "chainName": "arbitrum"
+        }
+      },
+      {
+        "name": "bridge",
+        "args": {
+          "amount": ".005",
+          "token": "eth",
+          "sourceChainName": "arbitrum",
+          "destinationChainName": "base"
+        }
+      }
+    ]
+  ],
+  "swap eth to 50 usdc on arbtirum one": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputToken": "eth",
+          "outputToken": "usdc",
+          "outputAmount": "50",
+          "chainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "bridge 100 usdc from base to arbitrum via jumper every monday and wednesday at 4 pm cet": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "100",
+          "token": "usdc",
+          "sourceChainName": "base",
+          "destinationChainName": "arbitrum",
+          "protocolName": "jumper"
+        }
+      },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "monday 4 pm cet",
+          "recurrence": { "type": "weeks", "interval": 1 }
+        }
+      },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "wednesday 4 pm cet",
+          "recurrence": { "type": "weeks", "interval": 1 }
+        }
+      }
+    ]
+  ],
+  "swap 100 usdc to eth on arbitrum every monday and wednesday at 4:50 pm cet": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "100",
+          "inputToken": "usdc",
+          "outputToken": "eth",
+          "chainName": "arbitrum"
+        }
+      },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "monday 4:50 pm cet",
+          "recurrence": { "type": "weeks", "interval": 1 }
+        }
+      },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "wednesday 4:50 pm cet",
+          "recurrence": { "type": "weeks", "interval": 1 }
+        }
+      }
+    ]
+  ],
+  "bridge eth from arbitrum to base every tuesday and thursday at 5 pm cet": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "token": "eth",
+          "sourceChainName": "arbitrum",
+          "destinationChainName": "base"
+        }
+      },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "tuesday 5 pm cet",
+          "recurrence": { "type": "weeks", "interval": 1 }
+        }
+      },
+      {
+        "name": "time",
+        "args": {
+          "start_time": "thursday 5 pm cet",
+          "recurrence": { "type": "weeks", "interval": 1 }
+        }
+      }
+    ]
+  ],
+  "move 0.02 eth from ethereum to base": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "0.02",
+          "token": "eth",
+          "sourceChainName": "ethereum",
+          "destinationChainName": "base"
+        }
+      }
+    ]
+  ],
+  "transfer 0.02 eth to my wallet on base": [
+    [
+      {
+        "name": "transfer",
+        "args": {
+          "amount": "0.02",
+          "token": "eth",
+          "recipient": "wallet",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "bridge $30 of eth from ethereum mainnet to base l2 chain": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "30",
+          "amount_units": "usd",
+          "token": "eth",
+          "sourceChainName": "ethereum",
+          "destinationChainName": "base"
+        }
+      }
+    ]
+  ],
+  "transfer 5 usdt from optimism to arbitrum": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "5",
+          "token": "usdt",
+          "sourceChainName": "optimism",
+          "destinationChainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "deposit 1 eth and equal amount of usdc into aerodrome": [
+    [
+      {
+        "name": "deposit",
+        "args": {
+          "protocolName": "aerodrome",
+          "amount": "1",
+          "token": "eth",
+          "poolName": "eth-usdc"
+        }
+      },
+      {
+        "name": "deposit",
+        "args": {
+          "protocolName": "aerodrome",
+          "amount": "outputAmount",
+          "token": "usdc",
+          "poolName": "eth-usdc"
+        }
+      }
+    ]
+  ],
+  "long btc with 5x leverage with 150 usdc on gmx and long eth with 5x leverage on gmx with 150 usdc and unwrap all my weth on arbitrum": [
+    [
+      {
+        "name": "long",
+        "args": {
+          "protocolName": "gmx",
+          "inputAmount": "150",
+          "inputToken": "usdc",
+          "outputToken": "btc",
+          "leverageMultiplier": "5"
+        }
+      },
+      {
+        "name": "long",
+        "args": {
+          "protocolName": "gmx",
+          "inputAmount": "150",
+          "outputToken": "eth",
+          "leverageMultiplier": "5",
+          "inputToken": "usdc"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "weth",
+          "outputToken": "eth",
+          "chainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "using my arbitrum eth buy .01 worth of usdc": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": ".01",
+          "inputToken": "eth",
+          "outputToken": "usdc",
+          "chainName": "arbitrum"
+        }
+      }
+    ]
+  ],
+  "bridge all my usdc from arb to base and bid aerodrome with it": [
+    [
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "all",
+          "token": "usdc",
+          "sourceChainName": "arbitrum",
+          "destinationChainName": "base"
+        }
+      },
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "outputAmount",
+          "inputToken": "usdc",
+          "outputToken": "aerodrome",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "on base swap tybg for 0x010728385ce76c3f4f9ccb8b7f86cf49f6c56305": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputToken": "tybg",
+          "outputToken": "0x010728385ce76c3f4f9ccb8b7f86cf49f6c56305",
+          "chainName": "base"
+        }
+      }
+    ]
+  ],
+  "swap 1.8 matic to usdc on polygon, bridge all usdc to base": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "1.8",
+          "inputToken": "matic",
+          "outputToken": "usdc",
+          "chainName": "polygon"
+        }
+      },
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "outputAmount",
+          "token": "usdc",
+          "sourceChainName": "polygon",
+          "destinationChainName": "base"
+        }
+      }
+    ]
+  ],
+  "swap 1.5 matic to eth on polygon then bridge to base": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "1.5",
+          "inputToken": "matic",
+          "outputToken": "eth",
+          "chainName": "polygon"
+        }
+      },
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "outputAmount",
+          "token": "eth",
+          "sourceChainName": "polygon",
+          "destinationChainName": "base"
+        }
+      }
+    ]
+  ],
+  "swap all of my usdc on arbitrum for eth and then transfer 0.02 eth to base": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "all",
+          "inputToken": "usdc",
+          "outputToken": "eth",
+          "chainName": "arbitrum"
+        }
+      },
+      {
+        "name": "bridge",
+        "args": {
+          "amount": "0.02",
+          "token": "eth",
+          "sourceChainName": "arbitrum",
+          "destinationChainName": "base"
+        }
+      }
+    ]
+  ],
+  "on base blockchain, swap my 20$ of my base token to eth": [
+    [
+      {
+        "name": "swap",
+        "args": {
+          "inputAmount": "20",
+          "inputAmountUnits": "usd",
+          "inputToken": "base",
+          "outputToken": "eth",
+          "chainName": "base"
+        }
+      }
+    ]
+  ]
+}

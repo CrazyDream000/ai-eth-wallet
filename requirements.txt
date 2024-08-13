@@ -1,0 +1,16 @@
+wheel
+fastapi
+uvicorn
+openai
+bs4
+requests
+pandas
+psycopg
+python-dotenv
+scipy
+slowapi
+tiktoken
+lxml
+asyncpg
+sqlalchemy
+sqlmodel

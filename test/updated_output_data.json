@@ -1,0 +1,1022 @@
+[
+    {
+        "name": "ADDRESSES_PROVIDER",
+        "description": "Returns the PoolAddressesProvider connected to this contract",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "BRIDGE_PROTOCOL_FEE",
+        "description": "Returns the part of the bridge fees sent to protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "FLASHLOAN_PREMIUM_TOTAL",
+        "description": "Returns the total fee on flash loans",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "FLASHLOAN_PREMIUM_TO_PROTOCOL",
+        "description": "Returns the part of the flashloan fees sent to protocol",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "MAX_NUMBER_RESERVES",
+        "description": "Returns the maximum number of reserves supported to be listed in this Pool",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "MAX_STABLE_RATE_BORROW_SIZE_PERCENT",
+        "description": "Returns the percentage of available liquidity that can be borrowed at once at stable rate",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "POOL_REVISION",
+        "description": "Description for POOL_REVISION",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "backUnbacked",
+        "description": "Back the current unbacked underlying with `amount` and pay `fee`.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset to back"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount to back"
+                },
+                "fee": {
+                    "type": "string",
+                    "description": "The amount paid in fees"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "fee"
+            ]
+        }
+    },
+    {
+        "name": "borrow",
+        "description": "Allows users to borrow a specific `amount` of the reserve underlying asset, provided that the borrower already supplied enough collateral, or he was given enough allowance by a credit delegator on the corresponding debt token (StableDebtToken or VariableDebtToken) - E.g. User borrows 100 USDC passing as `onBehalfOf` his own address, receiving the 100 USDC in his wallet   and 100 stable/variable debt tokens, depending on the `interestRateMode`",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset to borrow"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount to be borrowed"
+                },
+                "interestRateMode": {
+                    "type": "string",
+                    "description": "The interest rate mode at which the user wants to borrow: 1 for Stable, 2 for Variable"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "The code used to register the integrator originating the operation, for potential rewards.   0 if the action is executed directly by the user, without any middle-man"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "The address of the user who will receive the debt. Should be the address of the borrower itself calling the function if he wants to borrow against his own collateral, or the address of the credit delegator if he has been given credit delegation allowance"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "interestRateMode",
+                "referralCode",
+                "onBehalfOf"
+            ]
+        }
+    },
+    {
+        "name": "configureEModeCategory",
+        "description": "Configures a new category for the eMode.. In eMode, the protocol allows very high borrowing power to borrow assets of the same category. The category 0 is reserved as it's the default for volatile assets",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The id of the category"
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Description for category"
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ]
+        }
+    },
+    {
+        "name": "deposit",
+        "description": "Supplies an `amount` of underlying asset into the reserve, receiving in return overlying aTokens. - E.g. User supplies 100 USDC and gets in return 100 aUSDC. Deprecated: maintained for compatibility purposes",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset to supply"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount to be supplied"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "The address that will receive the aTokens, same as msg.sender if the user   wants to receive them on his own wallet, or a different address if the beneficiary of aTokens   is a different wallet"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Code used to register the integrator originating the operation, for potential rewards.   0 if the action is executed directly by the user, without any middle-man"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "onBehalfOf",
+                "referralCode"
+            ]
+        }
+    },
+    {
+        "name": "dropReserve",
+        "description": "Drop a reserve. Only callable by the PoolConfigurator contract",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset of the reserve"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "finalizeTransfer",
+        "description": "Validates and finalizes an aToken transfer. Only callable by the overlying aToken of the `asset`",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset of the aToken"
+                },
+                "from": {
+                    "type": "string",
+                    "description": "The user from which the aTokens are transferred"
+                },
+                "to": {
+                    "type": "string",
+                    "description": "The user receiving the aTokens"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount being transferred/withdrawn"
+                },
+                "balanceFromBefore": {
+                    "type": "string",
+                    "description": "The aToken balance of the `from` user before the transfer"
+                },
+                "balanceToBefore": {
+                    "type": "string",
+                    "description": "The aToken balance of the `to` user before the transfer"
+                }
+            },
+            "required": [
+                "asset",
+                "from",
+                "to",
+                "amount",
+                "balanceFromBefore",
+                "balanceToBefore"
+            ]
+        }
+    },
+    {
+        "name": "flashLoan",
+        "description": "Allows smartcontracts to access the liquidity of the pool within one transaction, as long as the amount taken plus a fee is returned.. IMPORTANT There are security concerns for developers of flashloan receiver contracts that must be kept into consideration. For further details please visit https://docs.aave.com/developers/",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "receiverAddress": {
+                    "type": "string",
+                    "description": "The address of the contract receiving the funds, implementing IFlashLoanReceiver interface"
+                },
+                "assets": {
+                    "type": "string",
+                    "description": "The addresses of the assets being flash-borrowed"
+                },
+                "amounts": {
+                    "type": "string",
+                    "description": "The amounts of the assets being flash-borrowed"
+                },
+                "interestRateModes": {
+                    "type": "string",
+                    "description": "Types of the debt to open if the flash loan is not returned:   0 -> Don't open any debt, just revert if funds can't be transferred from the receiver   1 -> Open debt at stable rate for the value of the amount flash-borrowed to the `onBehalfOf` address   2 -> Open debt at variable rate for the value of the amount flash-borrowed to the `onBehalfOf` address"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "The address  that will receive the debt in the case of using on `modes` 1 or 2"
+                },
+                "params": {
+                    "type": "string",
+                    "description": "Variadic packed params to pass to the receiver as extra information"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "The code used to register the integrator originating the operation, for potential rewards.   0 if the action is executed directly by the user, without any middle-man"
+                }
+            },
+            "required": [
+                "receiverAddress",
+                "assets",
+                "amounts",
+                "interestRateModes",
+                "onBehalfOf",
+                "params",
+                "referralCode"
+            ]
+        }
+    },
+    {
+        "name": "flashLoanSimple",
+        "description": "Allows smartcontracts to access the liquidity of the pool within one transaction, as long as the amount taken plus a fee is returned.. IMPORTANT There are security concerns for developers of flashloan receiver contracts that must be kept into consideration. For further details please visit https://docs.aave.com/developers/",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "receiverAddress": {
+                    "type": "string",
+                    "description": "The address of the contract receiving the funds, implementing IFlashLoanSimpleReceiver interface"
+                },
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the asset being flash-borrowed"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of the asset being flash-borrowed"
+                },
+                "params": {
+                    "type": "string",
+                    "description": "Variadic packed params to pass to the receiver as extra information"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "The code used to register the integrator originating the operation, for potential rewards.   0 if the action is executed directly by the user, without any middle-man"
+                }
+            },
+            "required": [
+                "receiverAddress",
+                "asset",
+                "amount",
+                "params",
+                "referralCode"
+            ]
+        }
+    },
+    {
+        "name": "getConfiguration",
+        "description": "Returns the configuration of the reserve",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset of the reserve"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "getEModeCategoryData",
+        "description": "Returns the data of an eMode category",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The id of the category"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    {
+        "name": "getReserveAddressById",
+        "description": "Returns the address of the underlying asset of a reserve by the reserve id as stored in the DataTypes.ReserveData struct",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The id of the reserve as stored in the DataTypes.ReserveData struct"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    {
+        "name": "getReserveData",
+        "description": "Returns the state and configuration of the reserve",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset of the reserve"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "getReserveNormalizedIncome",
+        "description": "Returns the normalized income of the reserve",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset of the reserve"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "getReserveNormalizedVariableDebt",
+        "description": "Returns the normalized variable debt per unit of asset. WARNING: This function is intended to be used primarily by the protocol itself to get a \"dynamic\" variable index based on time, current stored index and virtual rate at the current moment (approx. a borrower would get if opening a position). This means that is always used in combination with variable debt supply/balances. If using this function externally, consider that is possible to have an increasing normalized variable debt that is not equivalent to how the variable debt index would be updated in storage (e.g. only updates with non-zero variable debt supply)",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset of the reserve"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "getReservesList",
+        "description": "Returns the list of the underlying assets of all the initialized reserves. It does not include dropped reserves",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    {
+        "name": "getUserAccountData",
+        "description": "Returns the user account data across all the reserves",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "user": {
+                    "type": "string",
+                    "description": "The address of the user"
+                }
+            },
+            "required": [
+                "user"
+            ]
+        }
+    },
+    {
+        "name": "getUserConfiguration",
+        "description": "Returns the configuration of the user across all the reserves",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "user": {
+                    "type": "string",
+                    "description": "The user address"
+                }
+            },
+            "required": [
+                "user"
+            ]
+        }
+    },
+    {
+        "name": "getUserEMode",
+        "description": "Returns the eMode the user is using",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "user": {
+                    "type": "string",
+                    "description": "The address of the user"
+                }
+            },
+            "required": [
+                "user"
+            ]
+        }
+    },
+    {
+        "name": "initReserve",
+        "description": "Initializes a reserve, activating it, assigning an aToken and debt tokens and an interest rate strategy. Only callable by the PoolConfigurator contract",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset of the reserve"
+                },
+                "aTokenAddress": {
+                    "type": "string",
+                    "description": "The address of the aToken that will be assigned to the reserve"
+                },
+                "stableDebtAddress": {
+                    "type": "string",
+                    "description": "The address of the StableDebtToken that will be assigned to the reserve"
+                },
+                "variableDebtAddress": {
+                    "type": "string",
+                    "description": "The address of the VariableDebtToken that will be assigned to the reserve"
+                },
+                "interestRateStrategyAddress": {
+                    "type": "string",
+                    "description": "The address of the interest rate strategy contract"
+                }
+            },
+            "required": [
+                "asset",
+                "aTokenAddress",
+                "stableDebtAddress",
+                "variableDebtAddress",
+                "interestRateStrategyAddress"
+            ]
+        }
+    },
+    {
+        "name": "initialize",
+        "description": "Initializes the Pool.. Function is invoked by the proxy contract when the Pool contract is added to the PoolAddressesProvider of the market.Caching the address of the PoolAddressesProvider in order to reduce gas consumption on subsequent operations",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "provider": {
+                    "type": "string",
+                    "description": "The address of the PoolAddressesProvider"
+                }
+            },
+            "required": [
+                "provider"
+            ]
+        }
+    },
+    {
+        "name": "liquidationCall",
+        "description": "Function to liquidate a non-healthy position collateral-wise, with Health Factor below 1 - The caller (liquidator) covers `debtToCover` amount of debt of the user getting liquidated, and receives   a proportionally amount of the `collateralAsset` plus a bonus to cover market risk",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "collateralAsset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset used as collateral, to receive as result of the liquidation"
+                },
+                "debtAsset": {
+                    "type": "string",
+                    "description": "The address of the underlying borrowed asset to be repaid with the liquidation"
+                },
+                "user": {
+                    "type": "string",
+                    "description": "The address of the borrower getting liquidated"
+                },
+                "debtToCover": {
+                    "type": "string",
+                    "description": "The debt amount of borrowed `asset` the liquidator wants to cover"
+                },
+                "receiveAToken": {
+                    "type": "string",
+                    "description": "True if the liquidators wants to receive the collateral aTokens, `false` if he wants to receive the underlying collateral asset directly"
+                }
+            },
+            "required": [
+                "collateralAsset",
+                "debtAsset",
+                "user",
+                "debtToCover",
+                "receiveAToken"
+            ]
+        }
+    },
+    {
+        "name": "mintToTreasury",
+        "description": "Mints the assets accrued through the reserve factor to the treasury in the form of aTokens",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "assets": {
+                    "type": "string",
+                    "description": "The list of reserves for which the minting needs to be executed"
+                }
+            },
+            "required": [
+                "assets"
+            ]
+        }
+    },
+    {
+        "name": "mintUnbacked",
+        "description": "Mints an `amount` of aTokens to the `onBehalfOf`",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset to mint"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount to mint"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "The address that will receive the aTokens"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Code used to register the integrator originating the operation, for potential rewards.   0 if the action is executed directly by the user, without any middle-man"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "onBehalfOf",
+                "referralCode"
+            ]
+        }
+    },
+    {
+        "name": "rebalanceStableBorrowRate",
+        "description": "Rebalances the stable interest rate of a user to the current stable rate defined on the reserve. - Users can be rebalanced if the following conditions are satisfied:     1. Usage ratio is above 95%     2. the current supply APY is below REBALANCE_UP_THRESHOLD * maxVariableBorrowRate, which means that too        much has been borrowed at a stable rate and suppliers are not earning enough",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset borrowed"
+                },
+                "user": {
+                    "type": "string",
+                    "description": "The address of the user to be rebalanced"
+                }
+            },
+            "required": [
+                "asset",
+                "user"
+            ]
+        }
+    },
+    {
+        "name": "repay",
+        "description": "Repays a borrowed `amount` on a specific reserve, burning the equivalent debt tokens owned - E.g. User repays 100 USDC, burning 100 variable/stable debt tokens of the `onBehalfOf` address",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the borrowed underlying asset previously borrowed"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount to repay - Send the value type(uint256).max in order to repay the whole debt for `asset` on the specific `debtMode`"
+                },
+                "interestRateMode": {
+                    "type": "string",
+                    "description": "The interest rate mode at of the debt the user wants to repay: 1 for Stable, 2 for Variable"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "The address of the user who will get his debt reduced/removed. Should be the address of the user calling the function if he wants to reduce/remove his own debt, or the address of any other other borrower whose debt should be removed"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "interestRateMode",
+                "onBehalfOf"
+            ]
+        }
+    },
+    {
+        "name": "repayWithATokens",
+        "description": "Repays a borrowed `amount` on a specific reserve using the reserve aTokens, burning the equivalent debt tokens - E.g. User repays 100 USDC using 100 aUSDC, burning 100 variable/stable debt tokens. Passing uint256.max as amount will clean up any residual aToken dust balance, if the user aToken balance is not enough to cover the whole debt",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the borrowed underlying asset previously borrowed"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount to repay - Send the value type(uint256).max in order to repay the whole debt for `asset` on the specific `debtMode`"
+                },
+                "interestRateMode": {
+                    "type": "string",
+                    "description": "The interest rate mode at of the debt the user wants to repay: 1 for Stable, 2 for Variable"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "interestRateMode"
+            ]
+        }
+    },
+    {
+        "name": "repayWithPermit",
+        "description": "Repay with transfer approval of asset to be repaid done via permit function see: https://eips.ethereum.org/EIPS/eip-2612 and https://eips.ethereum.org/EIPS/eip-713",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the borrowed underlying asset previously borrowed"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount to repay - Send the value type(uint256).max in order to repay the whole debt for `asset` on the specific `debtMode`"
+                },
+                "interestRateMode": {
+                    "type": "string",
+                    "description": "The interest rate mode at of the debt the user wants to repay: 1 for Stable, 2 for Variable"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "Address of the user who will get his debt reduced/removed. Should be the address of the user calling the function if he wants to reduce/remove his own debt, or the address of any other other borrower whose debt should be removed"
+                },
+                "deadline": {
+                    "type": "string",
+                    "description": "The deadline timestamp that the permit is valid"
+                },
+                "permitV": {
+                    "type": "string",
+                    "description": "The V parameter of ERC712 permit sig"
+                },
+                "permitR": {
+                    "type": "string",
+                    "description": "The R parameter of ERC712 permit sig"
+                },
+                "permitS": {
+                    "type": "string",
+                    "description": "The S parameter of ERC712 permit sig"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "interestRateMode",
+                "onBehalfOf",
+                "deadline",
+                "permitV",
+                "permitR",
+                "permitS"
+            ]
+        }
+    },
+    {
+        "name": "rescueTokens",
+        "description": "Rescue and transfer tokens locked in this contract",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "description": "The address of the token"
+                },
+                "to": {
+                    "type": "string",
+                    "description": "The address of the recipient"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount of token to transfer"
+                }
+            },
+            "required": [
+                "token",
+                "to",
+                "amount"
+            ]
+        }
+    },
+    {
+        "name": "resetIsolationModeTotalDebt",
+        "description": "Resets the isolation mode total debt of the given asset to zero. It requires the given asset has zero debt ceiling",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset to reset the isolationModeTotalDebt"
+                }
+            },
+            "required": [
+                "asset"
+            ]
+        }
+    },
+    {
+        "name": "setConfiguration",
+        "description": "Sets the configuration bitmap of the reserve as a whole. Only callable by the PoolConfigurator contract",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset of the reserve"
+                },
+                "configuration": {
+                    "type": "string",
+                    "description": "The new configuration bitmap"
+                }
+            },
+            "required": [
+                "asset",
+                "configuration"
+            ]
+        }
+    },
+    {
+        "name": "setReserveInterestRateStrategyAddress",
+        "description": "Updates the address of the interest rate strategy contract. Only callable by the PoolConfigurator contract",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset of the reserve"
+                },
+                "rateStrategyAddress": {
+                    "type": "string",
+                    "description": "The address of the interest rate strategy contract"
+                }
+            },
+            "required": [
+                "asset",
+                "rateStrategyAddress"
+            ]
+        }
+    },
+    {
+        "name": "setUserEMode",
+        "description": "Allows a user to use the protocol in eMode",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "categoryId": {
+                    "type": "string",
+                    "description": "The id of the category"
+                }
+            },
+            "required": [
+                "categoryId"
+            ]
+        }
+    },
+    {
+        "name": "setUserUseReserveAsCollateral",
+        "description": "Allows suppliers to enable/disable a specific supplied asset as collateral",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset supplied"
+                },
+                "useAsCollateral": {
+                    "type": "string",
+                    "description": "True if the user wants to use the supply as collateral, false otherwise"
+                }
+            },
+            "required": [
+                "asset",
+                "useAsCollateral"
+            ]
+        }
+    },
+    {
+        "name": "supply",
+        "description": "Supplies an `amount` of underlying asset into the reserve, receiving in return overlying aTokens. - E.g. User supplies 100 USDC and gets in return 100 aUSDC",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset to supply"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount to be supplied"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "The address that will receive the aTokens, same as msg.sender if the user   wants to receive them on his own wallet, or a different address if the beneficiary of aTokens   is a different wallet"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Code used to register the integrator originating the operation, for potential rewards.   0 if the action is executed directly by the user, without any middle-man"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "onBehalfOf",
+                "referralCode"
+            ]
+        }
+    },
+    {
+        "name": "supplyWithPermit",
+        "description": "Supply with transfer approval of asset to be supplied done via permit function see: https://eips.ethereum.org/EIPS/eip-2612 and https://eips.ethereum.org/EIPS/eip-713",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset to supply"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The amount to be supplied"
+                },
+                "onBehalfOf": {
+                    "type": "string",
+                    "description": "The address that will receive the aTokens, same as msg.sender if the user   wants to receive them on his own wallet, or a different address if the beneficiary of aTokens   is a different wallet"
+                },
+                "referralCode": {
+                    "type": "string",
+                    "description": "Code used to register the integrator originating the operation, for potential rewards.   0 if the action is executed directly by the user, without any middle-man"
+                },
+                "deadline": {
+                    "type": "string",
+                    "description": "The deadline timestamp that the permit is valid"
+                },
+                "permitV": {
+                    "type": "string",
+                    "description": "The V parameter of ERC712 permit sig"
+                },
+                "permitR": {
+                    "type": "string",
+                    "description": "The R parameter of ERC712 permit sig"
+                },
+                "permitS": {
+                    "type": "string",
+                    "description": "The S parameter of ERC712 permit sig"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "onBehalfOf",
+                "referralCode",
+                "deadline",
+                "permitV",
+                "permitR",
+                "permitS"
+            ]
+        }
+    },
+    {
+        "name": "swapBorrowRateMode",
+        "description": "Allows a borrower to swap his debt between stable and variable mode, or vice versa",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset borrowed"
+                },
+                "interestRateMode": {
+                    "type": "string",
+                    "description": "The current interest rate mode of the position being swapped: 1 for Stable, 2 for Variable"
+                }
+            },
+            "required": [
+                "asset",
+                "interestRateMode"
+            ]
+        }
+    },
+    {
+        "name": "updateBridgeProtocolFee",
+        "description": "Updates the protocol fee on the bridging",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "protocolFee": {
+                    "type": "string",
+                    "description": "Description for protocolFee"
+                }
+            },
+            "required": [
+                "protocolFee"
+            ]
+        }
+    },
+    {
+        "name": "updateFlashloanPremiums",
+        "description": "Updates flash loan premiums. Flash loan premium consists of two parts: - A part is sent to aToken holders as extra, one time accumulated interest - A part is collected by the protocol treasury. The total premium is calculated on the total borrowed amountThe premium to protocol is calculated on the total premium, being a percentage of `flashLoanPremiumTotal`Only callable by the PoolConfigurator contract",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "flashLoanPremiumTotal": {
+                    "type": "string",
+                    "description": "The total premium, expressed in bps"
+                },
+                "flashLoanPremiumToProtocol": {
+                    "type": "string",
+                    "description": "The part of the premium sent to the protocol treasury, expressed in bps"
+                }
+            },
+            "required": [
+                "flashLoanPremiumTotal",
+                "flashLoanPremiumToProtocol"
+            ]
+        }
+    },
+    {
+        "name": "withdraw",
+        "description": "Withdraws an `amount` of underlying asset from the reserve, burning the equivalent aTokens owned E.g. User has 100 aUSDC, calls withdraw() and receives 100 USDC, burning the 100 aUSDC",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string",
+                    "description": "The address of the underlying asset to withdraw"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "The underlying amount to be withdrawn   - Send the value type(uint256).max in order to withdraw the whole aToken balance"
+                },
+                "to": {
+                    "type": "string",
+                    "description": "The address that will receive the underlying, same as msg.sender if the user   wants to receive it on his own wallet, or a different address if the beneficiary is a   different wallet"
+                }
+            },
+            "required": [
+                "asset",
+                "amount",
+                "to"
+            ]
+        }
+    }
+]
